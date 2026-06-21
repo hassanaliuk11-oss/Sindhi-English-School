@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آڪسفورڊ انگليش اڪيڊمي | سنڌ جو پهرين نمبر پريميئم ٻولي سکڻ جو مرڪز</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts Connection for the beautiful calligraphic Lateef Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* High-contrast cyber-neon palette */
+            --brand-primary: #00f0ff;    /* Glowing Electric Cyan */
+            --brand-secondary: #00ffaa;  /* Bright Luminous Mint */
+            --brand-accent: #ffb700;     /* Vivid Neon Gold */
+            --brand-pink: #ff007f;       /* Electric Pink */
+            --bg-dark: #030712;          /* Space Obsidian Black */
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #f8fafc; /* Crystal Off-White */
+            font-family: "Lateef", "Plus Jakarta Sans", serif;
+            font-size: 1.45rem; /* Increased base font size for the elegant Lateef font to read beautifully */
+            overflow-x: hidden;
+            letter-spacing: 0.02em;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                font-size: 1.65rem; /* Even larger on desktop screens for absolute legibility */
+            }
+        }
+
+        /* Spacious & Elegant Sindhi Typography Rules customized for Lateef Font */
+        .sindhi-text {
+            font-family: "Lateef", serif;
+            line-height: 2.1 !important; /* Optimal height for Lateef font to fully display all dots and symbols */
+            letter-spacing: 0.03em !important;
+            word-spacing: 0.14em !important; /* Expanded word spacing for maximum readability */
+        }
+
+        @media (min-width: 768px) {
+            .sindhi-text {
+                line-height: 2.3 !important;
+                word-spacing: 0.18em !important;
+            }
+        }
+
+        /* --- PULSATING NEON LIGHTING ANIMATIONS --- */
+        @keyframes neonPulseCyan {
+            0%, 100% {
+                text-shadow: 0 0 8px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.4);
+                color: #00f0ff;
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(0, 240, 255, 0.95), 0 0 35px rgba(0, 240, 255, 0.8);
+                color: #ffffff;
+            }
+        }
+
+        @keyframes neonPulseGold {
+            0%, 100% {
+                text-shadow: 0 0 8px rgba(255, 183, 0, 0.6), 0 0 20px rgba(255, 183, 0, 0.4);
+                color: #ffb700;
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(255, 183, 0, 0.95), 0 0 30px rgba(255, 183, 0, 0.7);
+                color: #ffffff;
+            }
+        }
+
+        @keyframes neonPulsePink {
+            0%, 100% {
+                text-shadow: 0 0 8px rgba(255, 0, 127, 0.6), 0 0 20px rgba(255, 0, 127, 0.4);
+                color: #ff007f;
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(255, 0, 127, 0.95), 0 0 35px rgba(255, 0, 127, 0.8);
+                color: #ffffff;
+            }
+        }
+
+        /* Smooth shifting rainbow glow for absolute visual delight */
+        @keyframes textGlowShift {
+            0% {
+                color: #00f0ff;
+                text-shadow: 0 0 12px rgba(0, 240, 255, 0.7), 0 0 25px rgba(0, 240, 255, 0.4);
+            }
+            33% {
+                color: #ffb700;
+                text-shadow: 0 0 12px rgba(255, 183, 0, 0.7), 0 0 25px rgba(255, 183, 0, 0.4);
+            }
+            66% {
+                color: #ff007f;
+                text-shadow: 0 0 12px rgba(255, 0, 127, 0.7), 0 0 25px rgba(255, 0, 127, 0.4);
+            }
+            100% {
+                color: #00f0ff;
+                text-shadow: 0 0 12px rgba(0, 240, 255, 0.7), 0 0 25px rgba(0, 240, 255, 0.4);
+            }
+        }
+
+        /* Premium entrance sliding header animation */
+        @keyframes slideDownHeader {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-down-header {
+            animation: slideDownHeader 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Neon Glowing Classes */
+        .neon-glow-cyan {
+            animation: neonPulseCyan 3s infinite ease-in-out;
+        }
+        .neon-glow-gold {
+            animation: neonPulseGold 3.5s infinite ease-in-out;
+        }
+        .neon-glow-pink {
+            animation: neonPulsePink 4s infinite ease-in-out;
+        }
+        .neon-glow-flow {
+            animation: textGlowShift 8s infinite ease-in-out;
+        }
+
+        /* Ambient Glowing Background Orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.12;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Premium Ultra-Glassmorphism Card with Expanded Spacing */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(0, 240, 255, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 240, 255, 0.15);
+        }
+
+        /* Floating elements animation */
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Option Active Visual States for quizzes/forms with brilliant cyan lighting */
+        .option-active {
+            border-color: var(--brand-primary) !important;
+            background: rgba(0, 240, 255, 0.1) !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+        }
+
+        /* Custom High-Contrast Input Fields */
+        .premium-input {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .premium-input:focus {
+            background: rgba(0, 0, 0, 0.8);
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            outline: none;
+        }
+
+        /* Clean High-Contrast Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-primary);
+        }
+
+        /* Accordion transition logic */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+        }
+        .accordion-active .accordion-content {
+            max-height: 320px;
+            padding-top: 1.25rem;
+        }
+        .accordion-active .accordion-icon {
+            transform: rotate(180deg);
+            color: var(--brand-primary);
+        }
+
+        /* Custom Chatbot Typing Effect Dots */
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--brand-primary);
+            border-radius: 50%;
+            animation: typingBounce 1s infinite alternate;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typingBounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-6px); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- HIGH-CONTRAST AMBIENT LIGHTS -->
+    <div class="glow-orb top-20 left-10 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-cyan-600/10"></div>
+    <div class="glow-orb top-[35%] right-10 w-[320px] md:w-[650px] h-[320px] md:h-[650px] bg-purple-600/10"></div>
+    <div class="glow-orb bottom-20 left-[15%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-emerald-600/10"></div>
+
+    <!-- ULTRA-PREMIUM NAVIGATION HEADER - PERFECTLY BALANCED FOR MOBILE AND DESKTOP -->
+    <header class="fixed top-0 left-0 right-0 z-40 px-2 sm:px-4 md:px-6 py-2 sm:py-4 md:py-6 animate-slide-down-header">
+        <div class="max-w-7xl mx-auto glass-card rounded-xl sm:rounded-2xl md:rounded-3xl px-3 sm:px-6 md:px-10 py-2 sm:py-4 md:py-6 flex items-center justify-between backdrop-blur-xl border border-white/10 shadow-2xl">
+            <!-- Brand Logo with animated glow -->
+            <div class="flex items-center gap-1.5 sm:gap-3">
+                <span class="p-1 sm:p-1.5 rounded-lg sm:rounded-2xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 flex items-center justify-center shadow-xl shadow-cyan-500/10 border border-cyan-400/30 shrink-0">
+                    <img src="https://i.ibb.co/Vcmq5RL0/file-00000000330071fa8b3767db78155c3f.png" 
+                         alt="Oxford English Academy Logo" 
+                         class="h-7 w-auto min-[360px]:h-8 min-[400px]:h-10 sm:h-12 md:h-16 object-contain rounded-md filter drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]"
+                         onerror="this.src='https://placehold.co/80x80/030712/00f0ff?text=OEA'">
+                </span>
+                <div class="flex flex-col gap-0 text-right">
+                    <span class="text-[9px] min-[360px]:text-[11px] min-[400px]:text-xs sm:text-lg md:text-2xl font-black neon-glow-cyan leading-none tracking-tight">OXFORD ENGLISH</span>
+                    <span class="text-[7px] min-[360px]:text-[8px] min-[400px]:text-[9px] sm:text-xs text-gray-400 tracking-widest uppercase font-bold leading-none mt-0.5 sm:mt-1">ACADEMY SINDH</span>
+                </div>
+            </div>
+
+            <!-- Nav Links (Desktop Only) -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-10 text-lg font-bold text-gray-300 tracking-wider">
+                <a href="#courses" class="hover:text-cyan-400 transition-all sindhi-text">اسان جا ڪورسز</a>
+                <a href="#practice-zone" class="hover:text-cyan-400 transition-all flex items-center gap-2 sindhi-text">
+                    پريڪٽس زون <span class="px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 text-[10px] font-black">مفت گيم</span>
+                </a>
+                <a href="#fee-calculator" class="hover:text-cyan-400 transition-all sindhi-text">فيس ڪيلڪيوليٽر</a>
+                <a href="#test-section" class="hover:text-cyan-400 transition-all sindhi-text">ليول ٽيسٽ</a>
+                <a href="#admission-form" class="hover:text-cyan-400 transition-all sindhi-text">آن لائن داخلا</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-1.5 sm:gap-4">
+                <a href="#test-section" class="hidden sm:inline-flex items-center gap-2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/25 text-xs px-3 py-2 rounded-xl font-black transition-all">
+                    <span class="sindhi-text text-sm">ليول ٽيسٽ</span>
+                    <span class="animate-pulse">⚡</span>
+                </a>
+                <a href="#admission-form" class="bg-gradient-to-r from-cyan-400 to-purple-500 hover:from-cyan-500 hover:to-purple-600 text-black font-black px-2.5 sm:px-6 md:px-8 py-1.5 sm:py-3.5 rounded-lg sm:rounded-2xl text-[10px] sm:text-base transition-all shadow-lg shadow-cyan-500/20 shrink-0 sindhi-text">
+                    داخلا فارم
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAJESTIC HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 sm:pt-36 md:pt-52 pb-16 md:pb-36 px-4 md:px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10 space-y-8 md:space-y-16">
+            <!-- Spacious dynamic welcome tag -->
+            <div class="inline-flex items-center gap-3 px-4 sm:px-8 py-2.5 sm:py-4 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-cyan-300 backdrop-blur-md floating-element">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                </span>
+                <span class="sindhi-text text-base sm:text-xl font-bold">نئون سيشن شروع: هاڻي انگريزي ڳالهايو بنا ڪنهن خوف يا هٻڪ جي! ✨</span>
+            </div>
+
+            <!-- Majestic Main Heading with pulsing text glow -->
+            <h1 class="text-5xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-wider leading-none text-white space-y-2 md:space-y-4 sindhi-text">
+                انگلش ڳالهايو <br class="hidden sm:block">
+                <span class="neon-glow-flow block pt-2 sm:pt-0">بنا ڪنهن هٻڪ جي</span>
+            </h1>
+
+            <!-- Ultra-Friendly Spacious Subtitle -->
+            <p class="sindhi-text text-xl sm:text-3xl lg:text-5xl text-gray-200 max-w-5xl mx-auto leading-relaxed md:leading-loose px-2">
+                ڇا توهان آسانيءَ سان انگريزي سيکارڻ چاهيو ٿا؟ اسان جي هاءِ ٽيڪ اڪيڊمي هاڻي سنڌ جي نوجوانن لاءِ آندي آهي <span class="neon-glow-cyan font-black underline decoration-cyan-400 underline-offset-4 md:underline-offset-8">100% لائيو سيشنز</span>، روزاني ڳالهائڻ جي لائيو مشق، ۽ انتهائي تجربيڪار استاد۔
+                <span class="block text-base sm:text-2xl lg:text-3xl text-gray-400 mt-4 md:mt-8 font-normal">صرف 1,000 PKR ماهوار يا 2,000 PKR مڪمل ڪورس فيس ۾ بهترين معياري تعليم حاصل ڪريو۔ اڄ ئي پنهنجو مفت ٽيسٽ شروع ڪريو!</span>
+            </p>
+
+            <!-- Spacious Friendly CTA Panel with Interactive Tags -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 px-2 max-w-4xl mx-auto w-full">
+                <a href="https://wa.me/923083500829" target="_blank" 
+                   class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-black font-extrabold px-6 sm:px-12 py-3.5 sm:py-6 rounded-xl sm:rounded-3xl text-sm sm:text-xl inline-flex items-center justify-center gap-3 transition-all transform hover:scale-[1.03] shadow-2xl shadow-green-950/40">
+                    <svg class="w-5 h-5 sm:w-8 sm:h-8 fill-current text-black" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.053 1.048 11.43 1.048c-5.439 0-9.865 4.371-9.869 9.8a9.65 9.65 0 0 0 1.485 5.008l-.319 1.162-.777 2.833 2.9-.76 1.15-.303zm12.515-4.808c-.354-.177-2.095-1.033-2.42-1.151-.325-.119-.562-.177-.797.177-.236.354-.913 1.151-1.121 1.386-.206.236-.413.265-.767.088-2.607-1.111-4.223-2.613-5.267-4.417-.275-.473.275-.44.788-1.464.088-.177.044-.332-.022-.465-.066-.133-.562-1.353-.77-1.853-.204-.491-.41-.424-.562-.432-.144-.007-.31-.008-.477-.008s-.438.063-.667.312c-.23.25-.875.855-.875 2.086 0 1.231.896 2.42 1.017 2.584.121.163 1.763 2.693 4.27 3.778 1.457.63 2.333.826 3.125.751.884-.084 2.096-.855 2.391-1.681.295-.827.295-1.534.207-1.681-.088-.146-.325-.235-.679-.413z"/></svg>
+                    <span class="sindhi-text text-lg sm:text-2xl font-black">واٽس اپ ذريعي مفت مشورو وٺو</span>
+                </a>
+                <a href="#practice-zone" class="w-full sm:w-auto bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold px-6 sm:px-12 py-3.5 sm:py-6 rounded-xl sm:rounded-3xl text-lg sm:text-2xl transition-all text-center sindhi-text">
+                    مفت انگلش گيم کيڏو 🎮
+                </a>
+            </div>
+
+            <!-- Quality Badges with icons and spacious margins -->
+            <div class="mt-8 sm:mt-20 pt-4 sm:pt-10 flex flex-wrap justify-center gap-3 sm:gap-8 text-sm sm:text-xl text-gray-300 font-bold tracking-wider sindhi-text">
+                <span class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10"><span class="text-cyan-400">🏆</span> Certified Academy</span>
+                <span class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10"><span class="text-emerald-400">👥</span> 5,000+ Students</span>
+                <span class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10"><span class="text-amber-400">🎓</span> Professional Mentors</span>
+                <span class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10"><span class="text-teal-400">💬</span> 24/7 Practice Club</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS DISPLAY WITH HOVER COUNT UP -->
+    <section class="py-8 sm:py-20 max-w-6xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 text-center relative z-10">
+        <div class="glass-card p-4 sm:p-10 rounded-xl sm:rounded-3xl border border-white/10">
+            <div class="text-4xl sm:text-7xl font-black text-cyan-400 mb-1 sm:mb-4 tracking-wider neon-glow-cyan" id="val-students">0</div>
+            <div class="sindhi-text text-base sm:text-2xl text-gray-300 font-bold">ڪامياب ترين شاگرد</div>
+        </div>
+        <div class="glass-card p-4 sm:p-10 rounded-xl sm:rounded-3xl border border-white/10">
+            <div class="text-4xl sm:text-7xl font-black text-emerald-400 mb-1 sm:mb-4 tracking-wider" id="val-satisfaction">0</div>
+            <div class="sindhi-text text-base sm:text-2xl text-gray-300 font-bold">مطمئن شرح موٽ (فیڈ بیک)</div>
+        </div>
+        <div class="glass-card p-4 sm:p-10 rounded-xl sm:rounded-3xl border border-white/10">
+            <div class="text-4xl sm:text-7xl font-black text-amber-400 mb-1 sm:mb-4 tracking-wider neon-glow-gold" id="val-ielts">0</div>
+            <div class="sindhi-text text-base sm:text-2xl text-gray-300 font-bold">IELTS اوسط اسڪور</div>
+        </div>
+        <div class="glass-card p-4 sm:p-10 rounded-xl sm:rounded-3xl border border-white/10">
+            <div class="text-4xl sm:text-7xl font-black text-purple-400 mb-1 sm:mb-4 tracking-wider neon-glow-pink">24/7</div>
+            <div class="sindhi-text text-base sm:text-2xl text-gray-300 font-bold">لائيو ڪلب اسپيڪنگ</div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE GRAMMAR GAME CHALLENGE -->
+    <section id="practice-zone" class="py-12 sm:py-36 max-w-5xl mx-auto px-4 md:px-6 relative z-10">
+        <div class="text-center mb-8 sm:mb-20 space-y-3 sm:space-y-4">
+            <span class="px-3.5 py-1.5 rounded-full bg-cyan-500/15 text-cyan-300 text-xs font-bold tracking-widest uppercase sindhi-text">پريڪٽس زون</span>
+            <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">هڪ ننڍڙو <span class="neon-glow-flow">انگلش چيلنج</span> کيڏو!</h2>
+            <p class="sindhi-text text-base sm:text-2xl text-gray-300">هيٺ ڏنل جملن ۾ موجود غلطي کي ڳوليو۔ ڇا توهان درست جواب ڏئي سگهو ٿا؟</p>
+        </div>
+
+        <div class="glass-card p-5 sm:p-12 rounded-2xl sm:rounded-3xl relative overflow-hidden border border-white/10">
+            <div id="game-welcome" class="text-center py-4 sm:py-10 space-y-4 sm:space-y-6">
+                <div class="text-5xl sm:text-8xl mb-2 animate-bounce">🏆</div>
+                <h3 class="sindhi-text text-3xl sm:text-5xl font-bold text-white">گرامر ۽ اسپيڪنگ پريڪٽس گيم</h3>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-300 max-w-xl mx-auto">صرف 4 آسان سوالن جا جواب ڏئي پنهنجي لاءِ فري ڊيمو ڪلاس جو پاس حاصل ڪريو!</p>
+                <button onclick="startGame()" class="sindhi-text px-6 sm:px-12 py-3 sm:py-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 hover:from-cyan-500 hover:to-purple-600 text-black font-black transition text-base sm:text-2xl shadow-2xl shadow-cyan-500/20 cursor-pointer w-full sm:w-auto">شروع ڪريو</button>
+            </div>
+
+            <div id="game-play" class="hidden space-y-4 sm:space-y-10 text-right">
+                <div class="flex items-center justify-between">
+                    <span id="game-progress-text" class="sindhi-text text-base sm:text-2xl text-cyan-300 font-bold">سوال 1/4</span>
+                    <span id="game-score-badge" class="px-3 py-1.5 rounded-full bg-cyan-500/15 text-cyan-400 text-sm sm:text-base font-black">اسڪور: 00</span>
+                </div>
+                <div class="h-2 w-full bg-white/5 rounded-full">
+                    <div id="game-progress-bar" class="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full transition-all duration-300" style="width: 25%;"></div>
+                </div>
+
+                <div class="space-y-1.5 sm:space-y-4">
+                    <span class="sindhi-text text-sm sm:text-lg font-bold text-amber-400 uppercase tracking-widest block">درست جملو چونڊيو:</span>
+                    <h4 id="game-question-title" class="text-lg sm:text-4xl font-bold text-white tracking-wide text-left">Which sentence is correct?</h4>
+                </div>
+
+                <div id="game-options" class="grid grid-cols-1 gap-3 sm:gap-6">
+                    <!-- Dynamic Elements Filled By Javascript -->
+                </div>
+
+                <!-- Visual feedback block -->
+                <div id="game-feedback" class="hidden p-3.5 sm:p-6 rounded-xl sm:rounded-2xl text-center sindhi-text font-black text-base sm:text-2xl">
+                    <!-- Dynamic Feedback -->
+                </div>
+            </div>
+
+            <div id="game-result" class="hidden text-center py-4 sm:py-10 space-y-4 sm:space-y-8">
+                <div class="text-5xl sm:text-9xl mb-2" id="game-result-emoji">🎉</div>
+                <h3 class="sindhi-text text-3xl sm:text-6xl font-black text-white">تمام شاندار!</h3>
+                <p class="sindhi-text text-gray-200 text-base sm:text-3xl" id="game-result-text">توهان 4 مان 4 اسڪور حاصل ڪيو آهي۔</p>
+                
+                <div class="p-4 sm:p-10 bg-cyan-500/5 border border-cyan-500/20 rounded-xl sm:rounded-3xl max-w-2xl mx-auto space-y-2 sm:space-y-4">
+                    <h4 class="sindhi-text font-black text-cyan-300 text-xl sm:text-4xl">🎁 اڪيڊمي پاران خاص تحفو</h4>
+                    <p class="sindhi-text text-base sm:text-2xl text-gray-300 leading-relaxed">کيل مڪمل ڪرڻ جي خوشيءَ ۾ توهان کي اسان جي پاران پهرين مهيني جي فيس سان گڏ <span class="text-white font-extrabold underline decoration-cyan-400 underline-offset-4">3 ڏينهن جا فري ڊيمو ڪلاسز</span> ڏنا پيا وڃن۔ هيٺ ڏنل بٽڻ تي ڪلڪ ڪري واٽس اپ تي رابطو ڪريو۔</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-8 w-full">
+                    <button onclick="restartGame()" class="sindhi-text bg-white/5 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-xl transition border border-white/10 text-base sm:text-2xl w-full sm:w-auto">ٻيهر کيڏو</button>
+                    <a href="https://wa.me/923083500829?text=Oxford_English_Game_Completed_Promo" target="_blank" class="sindhi-text bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-extrabold px-6 py-3 rounded-xl transition text-base sm:text-2xl shadow-2xl shadow-cyan-500/25 w-full sm:w-auto text-center">فري آفر حاصل ڪريو</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FLOATING AI CHAT ASSISTANT (ZARA) -->
+    <div class="fixed bottom-4 right-4 sm:bottom-10 sm:right-10 z-50">
+        <!-- Trigger Bubble with enlarged size and shadow -->
+        <button onclick="toggleChatWindow()" class="relative flex items-center justify-center w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-black shadow-2xl shadow-cyan-400/30 hover:scale-105 active:scale-95 transition-all border border-cyan-300/30">
+            <span class="absolute top-0 right-0 h-3.5 w-3.5 bg-emerald-500 border-2 border-slate-950 rounded-full animate-pulse"></span>
+            <svg class="w-6 h-6 sm:w-10 sm:h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+        </button>
+
+        <!-- Chat Window responsive sizing for screen widths -->
+        <div id="chat-window" class="fixed bottom-20 sm:bottom-32 right-3 sm:right-10 w-[calc(100vw-24px)] sm:w-[440px] h-[450px] sm:h-[550px] glass-card rounded-2xl border border-white/20 flex flex-col shadow-2xl overflow-hidden hidden transition-all duration-300 transform scale-95 origin-bottom-right">
+            <!-- Header -->
+            <div class="p-3.5 sm:p-6 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border-b border-white/10 flex items-center justify-between">
+                <div class="flex items-center gap-2.5 sm:gap-4">
+                    <div class="relative">
+                        <span class="absolute bottom-0 right-0 h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-500 rounded-full border border-slate-900"></span>
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 rounded-full bg-cyan-400/25 text-cyan-300 flex items-center justify-center font-bold text-base sm:text-2xl border border-cyan-400/30">Z</div>
+                    </div>
+                    <div class="text-right">
+                        <h4 class="sindhi-text text-base sm:text-2xl font-black text-white leading-none">ڪائونسلر زارا (Counselor Zara)</h4>
+                        <span class="sindhi-text text-xs sm:text-base text-gray-400 flex items-center gap-1.5 mt-0.5 sm:mt-1">
+                            <span class="h-1 w-1 bg-emerald-400 rounded-full animate-ping"></span> آن لائن مدد لاءِ تيار
+                        </span>
+                    </div>
+                </div>
+                <button onclick="toggleChatWindow()" class="text-gray-400 hover:text-white transition-all p-1 sm:p-2 bg-white/5 rounded-full border border-white/10">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Messages Area with spacious layout -->
+            <div id="chat-messages" class="flex-1 p-3.5 sm:p-6 overflow-y-auto space-y-3 sm:space-y-6">
+                <div class="flex items-start gap-2 sm:gap-3">
+                    <div class="w-7 h-7 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center font-bold text-[10px] shrink-0">Z</div>
+                    <div class="sindhi-text bg-white/5 border border-white/10 rounded-xl rounded-tr-none p-2.5 sm:p-5 text-sm sm:text-xl text-gray-100 max-w-[85%] leading-relaxed text-right">
+                        اسلام عليڪم! مان آڪسفورڊ اڪيڊمي جي ورچوئل ڪائونسلر زارا آهيان۔ مان توهان کي فيس، ڪورسز ۽ ڪلاس جي وقت بابت معلومات ڏئي سگهان ٿي۔ مهرباني ڪري هيٺ ڏنل بٽڻن مان چونڊيو۔ 👇
+                    </div>
+                </div>
+            </div>
+
+            <!-- Predefined Chip Buttons with touch sizes -->
+            <div class="p-3 bg-black/50 border-t border-white/10 space-y-2">
+                <div class="flex flex-wrap gap-1.5 justify-end">
+                    <button onclick="sendQuickMessage('courses_info')" class="sindhi-text text-xs sm:text-sm bg-cyan-500/10 hover:bg-cyan-500/25 border border-cyan-500/30 text-cyan-300 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition font-black">🎓 ڪورسز جي تفصيل؟</button>
+                    <button onclick="sendQuickMessage('fee_structure')" class="sindhi-text text-xs sm:text-sm bg-purple-500/10 hover:bg-purple-500/25 border border-purple-500/30 text-purple-300 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition font-black">💵 فيس ڪيتري آهي؟</button>
+                    <button onclick="sendQuickMessage('class_timing')" class="sindhi-text text-xs sm:text-sm bg-amber-500/10 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition font-black">🕒 ڪلاس جو وقت؟</button>
+                    <button onclick="sendQuickMessage('demo_class')" class="sindhi-text text-xs sm:text-sm bg-teal-500/10 hover:bg-teal-500/25 border border-teal-500/30 text-teal-300 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition font-black">🎁 مفت ڊيمو ڪلاسز؟</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE FEE CALCULATOR SECTION -->
+    <section id="fee-calculator" class="py-12 sm:py-36 max-w-6xl mx-auto px-4 md:px-6 relative z-10 text-right">
+        <div class="text-center mb-8 sm:mb-20 space-y-3 sm:space-y-4">
+            <span class="px-3.5 py-1.5 rounded-full bg-purple-500/15 text-purple-300 text-xs font-bold tracking-widest uppercase sindhi-text">انتهاڻي مناسب فيس پلان</span>
+            <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">انٽرايڪٽو <span class="neon-glow-flow">فيس ڪيلڪيوليٽر</span></h2>
+            <p class="sindhi-text text-base sm:text-2xl text-gray-300">پنهنجو من پسند ڪورس ۽ پلان چونڊيو، ۽ لائيو فيس ڏسو!</p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-stretch">
+            <!-- Settings Panel -->
+            <div class="md:col-span-7 glass-card p-5 sm:p-12 rounded-2xl sm:rounded-3xl border border-white/10 flex flex-col justify-between space-y-6 sm:space-y-10">
+                <div class="space-y-6 sm:space-y-10">
+                    <!-- Course Option selection -->
+                    <div class="space-y-2.5 sm:space-y-4">
+                        <label class="sindhi-text block text-base sm:text-2xl uppercase tracking-widest text-amber-400 font-black">1۔ پنهنجو ڪورس چونڊيو:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="selectCalCourse('spoken')" id="cal-spoken" class="option-active p-4 rounded-xl sm:rounded-2xl premium-input text-gray-100 font-extrabold transition text-xs sm:text-sm text-center flex flex-col items-center gap-2 cursor-pointer w-full">
+                                <span class="text-3xl sm:text-4xl">🗣️</span>
+                                <span class="sindhi-text text-base sm:text-xl">Spoken English</span>
+                            </button>
+                            <button onclick="selectCalCourse('ielts')" id="cal-ielts" class="p-4 rounded-xl sm:rounded-2xl premium-input text-gray-100 font-extrabold transition text-xs sm:text-sm text-center flex flex-col items-center gap-2 cursor-pointer w-full">
+                                <span class="text-3xl sm:text-4xl">🎓</span>
+                                <span class="sindhi-text text-base sm:text-xl">IELTS Expert</span>
+                            </button>
+                            <button onclick="selectCalCourse('grammar')" id="cal-grammar" class="p-4 rounded-xl sm:rounded-2xl premium-input text-gray-100 font-extrabold transition text-xs sm:text-sm text-center flex flex-col items-center gap-2 cursor-pointer w-full">
+                                <span class="text-3xl sm:text-4xl">✍️</span>
+                                <span class="sindhi-text text-base sm:text-xl">Grammar Expert</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Payment Plan selection -->
+                    <div class="space-y-2.5 sm:space-y-4">
+                        <label class="sindhi-text block text-base sm:text-2xl uppercase tracking-widest text-amber-400 font-black">2۔ مدو ۽ پلان چونڊيو:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="selectCalPlan('monthly', 1000)" id="cal-monthly" class="option-active p-4 rounded-xl sm:rounded-2xl premium-input text-gray-100 font-bold transition text-sm sm:text-xl text-center sindhi-text cursor-pointer w-full">
+                                ماهوار فيس پلان (1,000 PKR)
+                            </button>
+                            <button onclick="selectCalPlan('full', 2000)" id="cal-full" class="p-4 rounded-xl sm:rounded-2xl premium-input text-gray-100 font-bold transition text-sm sm:text-xl text-center sindhi-text cursor-pointer w-full">
+                                مڪمل ڪورس فيس (2,000 PKR)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Class Format selection -->
+                    <div class="space-y-2.5 sm:space-y-4">
+                        <label class="sindhi-text block text-base sm:text-2xl uppercase tracking-widest text-amber-400 font-black">3۔ ڪلاس جو طريقو:</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="selectCalFormat('online')" id="cal-online" class="option-active p-4 rounded-xl sm:rounded-2xl premium-input text-gray-100 font-bold transition text-sm sm:text-xl text-center sindhi-text cursor-pointer w-full">
+                                💻 آن لائن ڪلاس
+                            </button>
+                            <button onclick="selectCalFormat('physical')" id="cal-physical" class="p-4 rounded-xl sm:rounded-2xl premium-input text-gray-100 font-bold transition text-sm sm:text-xl text-center sindhi-text cursor-pointer w-full">
+                                🏫 فزيڪل ڪلاس
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Output Panel with premium contrast -->
+            <div class="md:col-span-5 bg-gradient-to-br from-cyan-950 to-slate-950 rounded-2xl sm:rounded-3xl p-5 sm:p-12 border-2 border-cyan-400/30 text-white flex flex-col justify-between shadow-2xl space-y-6 sm:space-y-8 text-right">
+                <div class="space-y-3 sm:space-y-6">
+                    <span class="sindhi-text px-3 py-1.5 rounded-full bg-cyan-400/20 text-cyan-300 text-xs sm:text-sm font-black uppercase inline-block">پيڪيج جي سمري</span>
+                    <h3 class="text-2xl sm:text-5xl font-black tracking-wider neon-glow-cyan text-left" id="sum-course-title">Spoken English</h3>
+                    <p class="sindhi-text text-base sm:text-2xl text-gray-300" id="sum-course-desc">بنا ڪنهن هٻڪ جي روانيءَ سان انگريزي ڳالهائڻ سکو۔</p>
+
+                    <div class="mt-4 sm:mt-12 space-y-2.5 sm:space-y-5 border-t border-white/10 pt-4 sm:pt-10">
+                        <div class="flex items-center justify-between text-sm sm:text-lg">
+                            <span class="sindhi-text opacity-90">بنيادي فيس پلان:</span>
+                            <span class="font-bold text-white tracking-widest text-sm sm:text-xl" id="sum-base-fee">1,000 PKR</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm sm:text-lg">
+                            <span class="sindhi-text opacity-90">طريقو (Format):</span>
+                            <span class="font-bold text-white tracking-widest text-sm sm:text-xl" id="sum-format-add">شامل فيس (+0)</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm sm:text-lg">
+                            <span class="sindhi-text opacity-90">اضافي داخلا چارجز:</span>
+                            <span class="font-bold text-cyan-400 tracking-widest text-sm sm:text-xl">0 PKR (مفت)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 sm:space-y-6">
+                    <span class="sindhi-text text-sm sm:text-base opacity-90 uppercase block text-amber-400 font-black">ٽوٽل فيس رقم:</span>
+                    <div class="text-4xl sm:text-7xl font-black tracking-wider flex items-baseline gap-1.5 text-cyan-400 neon-glow-cyan justify-end" id="sum-total-fee">
+                        1,000 <span class="text-sm sm:text-2xl font-bold text-white mr-1.5">PKR</span>
+                    </div>
+                    <p class="sindhi-text text-xs sm:text-base text-gray-400 leading-relaxed">نوٽ: هن مناسب پيڪيج ۾ سمورو اسٽڊي مٽيريل ۽ لائيوف سرٽيفڪيٽ جي آفيشل فيس شامل آهي۔</p>
+
+                    <a href="#admission-form" onclick="applyWithCal()" class="sindhi-text w-full py-3.5 sm:py-6 rounded-xl sm:rounded-2xl bg-cyan-400 hover:bg-cyan-500 text-black font-black transition text-center block text-base sm:text-2xl shadow-2xl shadow-cyan-500/20 cursor-pointer">
+                        هن پيڪيج تي اپلائي ڪريو 🚀
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED COURSES SECTION -->
+    <section id="courses" class="py-12 sm:py-36 px-4 md:px-6 max-w-7xl mx-auto relative z-10 text-right">
+        <div class="text-center mb-10 sm:mb-24 space-y-3 sm:space-y-4">
+            <h2 class="sindhi-text text-4xl sm:text-7xl font-black tracking-widest text-white">
+                اسان جا <span class="neon-glow-flow">پريميئم ڪورسز</span>
+            </h2>
+            <p class="sindhi-text text-base sm:text-2xl text-gray-300 max-w-3xl mx-auto">عالمي معيار جو نصاب جيڪو توهان جي تعليمي ۽ پروفيشنل زندگيءَ کي بدلائي ڇڏيندو۔ هر ڪورس ۾ آن لائين ۽ فزيل ٻئي آپشنز موجود آهن۔</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 sm:gap-10">
+            <!-- Course Card 1 -->
+            <div class="glass-card p-5 sm:p-12 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative overflow-hidden group border border-white/10">
+                <div class="absolute top-0 right-0 w-24 sm:w-36 h-24 sm:h-36 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/25 transition-all"></div>
+                <div class="space-y-4 sm:space-y-8">
+                    <div class="w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl sm:text-4xl font-bold border border-cyan-500/30 font-sans">A</div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-white tracking-widest text-left font-sans">Spoken English</h3>
+                    <p class="sindhi-text text-base sm:text-2xl text-gray-300">
+                        بنا ڪنهن خوف ۽ هٻڪ جي رواني سان انگريزي ڳالهائڻ سکو۔ روزاني گفتگو ۽ ڪانفيڊنس بلڊنگ جي لائيو مشق۔
+                    </p>
+                </div>
+                <div class="mt-6 sm:mt-12 pt-4 sm:pt-8 border-t border-white/10 flex items-center justify-between text-sm sm:text-lg">
+                    <span class="sindhi-text text-cyan-300 font-bold">ماهوار: 1,000 | مڪمل: 2,000 PKR</span>
+                    <button onclick="openModal('spoken')" class="sindhi-text text-amber-400 hover:text-white transition-all cursor-pointer flex items-center gap-1.5 font-bold">
+                        <span>وڌيڪ تفصيل</span>
+                        <span>&larr;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="glass-card p-5 sm:p-12 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative overflow-hidden group border border-white/10">
+                <div class="absolute top-0 right-0 w-24 sm:w-36 h-24 sm:h-36 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/25 transition-all"></div>
+                <div class="space-y-4 sm:space-y-8">
+                    <div class="w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-2xl sm:text-4xl font-bold border border-purple-500/30 font-sans">B</div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-white tracking-widest text-left font-sans">IELTS Expert</h3>
+                    <p class="sindhi-text text-base sm:text-2xl text-gray-300">
+                        Academic ۽ General ٽريننگ۔ Listening, Reading, Writing ۽ Speaking ۾ گهربل بينڊز حاصل ڪرڻ لاءِ بهترين طريقا ۽ موڪ ٽيسٽ۔
+                    </p>
+                </div>
+                <div class="mt-6 sm:mt-12 pt-4 sm:pt-8 border-t border-white/10 flex items-center justify-between text-sm sm:text-lg">
+                    <span class="sindhi-text text-purple-300 font-bold">ماهوار: 1,000 | مڪمل: 2,000 PKR</span>
+                    <button onclick="openModal('ielts')" class="sindhi-text text-amber-400 hover:text-white transition-all cursor-pointer flex items-center gap-1.5 font-bold">
+                        <span>وڌيڪ تفصيل</span>
+                        <span>&larr;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="glass-card p-5 sm:p-12 rounded-2xl sm:rounded-3xl flex flex-col justify-between relative overflow-hidden group border border-white/10">
+                <div class="absolute top-0 right-0 w-24 sm:w-36 h-24 sm:h-36 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/25 transition-all"></div>
+                <div class="space-y-4 sm:space-y-8">
+                    <div class="w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-400 text-2xl sm:text-4xl font-bold border border-amber-500/30 font-sans">C</div>
+                    <h3 class="text-2xl sm:text-4xl font-black text-white tracking-widest text-left font-sans">Advanced Grammar</h3>
+                    <p class="sindhi-text text-base sm:text-2xl text-gray-300">
+                        بنيادي گرامر کان وٺي ايڊوانس رائٽنگ اسٽرڪچرس تائين۔ پروفيشنل ۽ اڪيڊمڪ لکڻين جا سونهري اصول۔
+                    </p>
+                </div>
+                <div class="mt-6 sm:mt-12 pt-4 sm:pt-8 border-t border-white/10 flex items-center justify-between text-sm sm:text-lg">
+                    <span class="sindhi-text text-amber-300 font-bold">ماهوار: 1,000 | مڪمل: 2,000 PKR</span>
+                    <button onclick="openModal('grammar')" class="sindhi-text text-amber-400 hover:text-white transition-all cursor-pointer flex items-center gap-1.5 font-bold">
+                        <span>وڌيڪ تفصيل</span>
+                        <span>&larr;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE LEVEL TEST SECTION -->
+    <section id="test-section" class="py-12 sm:py-36 bg-slate-950/40 relative z-10 text-right">
+        <div class="max-w-5xl mx-auto px-4 md:px-6 relative">
+            <div class="text-center mb-8 sm:mb-20 space-y-3 sm:space-y-4">
+                <span class="px-3.5 py-1.5 rounded-full bg-cyan-500/15 text-cyan-300 text-xs font-bold uppercase sindhi-text">سيلف اسيسمينٽ</span>
+                <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">پنهنجو <span class="neon-glow-flow">انجلش ليول</span> ڄاڻو!</h2>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-300">هيٺ ڏنل 4 سوالن جا درست جواب ڏئي پنهنجي انگريزيءَ جي ليول ۽ بهترين مشورو حاصل ڪريو۔</p>
+            </div>
+
+            <div class="glass-card p-5 sm:p-16 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden min-h-[350px] sm:min-h-[420px] flex flex-col justify-between">
+                <div class="absolute -top-10 -left-10 w-24 sm:w-48 h-24 sm:h-48 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div id="quiz-container" class="space-y-4 sm:space-y-8">
+                    <!-- Progress bar -->
+                    <div class="w-full bg-white/5 rounded-full h-1.5 sm:h-3 mb-6 sm:mb-10">
+                        <div id="quiz-progress" class="bg-gradient-to-r from-cyan-400 to-purple-500 h-1.5 sm:h-3 rounded-full transition-all duration-300" style="width: 25%"></div>
+                    </div>
+
+                    <!-- Question Block -->
+                    <div id="question-block" class="transition-all duration-300 transform translate-x-0 space-y-3 sm:space-y-6">
+                        <span id="question-number" class="sindhi-text text-base sm:text-2xl font-bold text-cyan-300">سوال 1/4</span>
+                        <h3 id="question-text" class="text-lg sm:text-4xl font-bold text-white tracking-wide leading-snug text-left">She ________ to school every single day.</h3>
+                        
+                        <!-- Options Group -->
+                        <div id="options-group" class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 pt-2 sm:pt-4">
+                            <!-- Dynamic Options Filled By Javascript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Block -->
+                <div id="result-block" class="hidden text-center py-4 sm:py-10 space-y-4 sm:space-y-8">
+                    <div class="w-12 h-12 sm:w-20 sm:h-20 bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 rounded-full flex items-center justify-center text-2xl sm:text-5xl mx-auto mb-3 sm:mb-6">✓</div>
+                    <h3 class="sindhi-text text-3xl sm:text-6xl font-black text-white">ٽيسٽ مڪمل ٿي وئي آهي!</h3>
+                    <p id="result-score" class="sindhi-text text-gray-200 text-base sm:text-3xl">توهان جو اسڪور: <span class="text-cyan-400 font-bold">4/4</span></p>
+                    <div class="p-4 sm:p-10 bg-white/5 border border-white/10 rounded-xl sm:rounded-3xl max-w-2xl mx-auto space-y-2 sm:space-y-4 text-right">
+                        <h4 class="sindhi-text font-bold text-white text-lg sm:text-3xl">اسان جو مشورو:</h4>
+                        <p id="result-advice" class="sindhi-text text-base sm:text-2xl text-gray-300 leading-relaxed">توهان جي انگريزيءَ جو بنياد مضبوط آهي۔ اسان توهان کي IELTS Preparation ڪورس جي صلاح ڏينداسين ته جيئن پنهنجو خواب سچو ڪري سگهو۔</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-8 justify-center">
+                        <button onclick="restartQuiz()" class="sindhi-text bg-white/5 hover:bg-white/10 text-white border border-white/15 px-6 py-3 rounded-xl transition text-base sm:text-2xl font-bold cursor-pointer w-full sm:w-auto">ٻيهر ڪوشش ڪريو</button>
+                        <a href="#admission-form" class="sindhi-text bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-extrabold px-6 py-3 rounded-xl transition text-base sm:text-2xl shadow-2xl shadow-cyan-400/20 text-center w-full sm:w-auto">هاڻي داخلا وٺو</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERT TEACHERS SHOWCASE -->
+    <section class="py-12 sm:py-36 max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-right">
+        <div class="text-center mb-10 sm:mb-24 space-y-3 sm:space-y-4">
+            <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-bold uppercase sindhi-text">ماهر ٽرينرز</span>
+            <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">اسان جا <span class="neon-glow-flow">بين الاقوامي معيار جا استاد</span></h2>
+            <p class="sindhi-text text-base sm:text-2xl text-gray-300">جيڪي دوستانه ۽ نئين انداز ۾ لائيو ڪلاسز ۾ توهان جي مڪمل رهنمائي ڪندا۔</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-10">
+            <!-- Lead Teacher: Sir Hassan Ali Jatoi -->
+            <div class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-10 text-center border-2 border-cyan-400/50 relative overflow-hidden space-y-4 sm:space-y-6 shadow-2xl">
+                <!-- Glowing status ribbon -->
+                <div class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/40 text-[9px] uppercase font-black tracking-widest font-sans">
+                    Senior Lead
+                </div>
+                <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center text-3xl sm:text-5xl mx-auto border-2 border-cyan-400/40 neon-glow-cyan">👑</div>
+                <div class="space-y-1 sm:space-y-2">
+                    <h4 class="text-2xl sm:text-4xl font-black text-white tracking-wider sindhi-text">سر حسن علي جتوئي</h4>
+                    <p class="text-[9px] sm:text-xs text-cyan-300 font-bold tracking-widest uppercase font-sans">Lead English Linguistics Coach</p>
+                </div>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-200">10 سالن کان وڌيڪ تدريسي تجربو رکندڙ ۽ 5,000+ شاگردن کي رواني سان انگريزي ۽ آئيليٽس (IELTS) سيکاريندڙ سنڌ جو ناميارو سينيئر لائيو ٽرينر۔</p>
+                <div class="pt-2 flex justify-center gap-2 flex-wrap text-sm sm:text-base">
+                    <span class="px-2.5 py-1 rounded-xl bg-white/5 text-xs text-gray-300 font-semibold border border-white/5">Excellent Feedback</span>
+                    <span class="px-2.5 py-1 rounded-xl bg-cyan-400/15 text-xs text-cyan-300 font-semibold border border-cyan-400/20">Lead Mentor</span>
+                </div>
+            </div>
+
+            <!-- Teacher 2 -->
+            <div class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-10 text-center border border-white/10 relative overflow-hidden space-y-4 sm:space-y-6">
+                <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-3xl sm:text-5xl mx-auto border border-emerald-500/30">🗣️</div>
+                <div class="space-y-1 sm:space-y-2">
+                    <h4 class="text-2xl sm:text-4xl font-black text-white tracking-wider sindhi-text">سر عبدالرحمان</h4>
+                    <p class="text-[9px] sm:text-xs text-emerald-300 font-bold tracking-widest uppercase font-sans">IELTS & Accent Master Trainer</p>
+                </div>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-300">مؤثر ترين پبلڪ اسپيڪنگ ٽيڪنڪس، آمريڪي ۽ برطانوي لهجي جي مشق، ۽ آئيليٽس ۾ 8+ بينڊز جي تياري جا ماهر۔</p>
+                <div class="pt-2 flex justify-center gap-2 flex-wrap text-sm sm:text-base">
+                    <span class="px-2.5 py-1 rounded-xl bg-white/5 text-xs text-gray-300 font-semibold border border-white/5">Friendly Coach</span>
+                    <span class="px-2.5 py-1 rounded-xl bg-white/5 text-xs text-gray-300 font-semibold border border-white/5">Accent Specialist</span>
+                </div>
+            </div>
+
+            <!-- Teacher 3 -->
+            <div class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-10 text-center border border-white/10 relative overflow-hidden space-y-4 sm:space-y-6">
+                <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-3xl sm:text-5xl mx-auto border border-amber-500/30">🧠</div>
+                <div class="space-y-1 sm:space-y-2">
+                    <h4 class="text-2xl sm:text-4xl font-black text-white tracking-wider sindhi-text">مس عائشه</h4>
+                    <p class="text-[9px] sm:text-xs text-amber-300 font-bold tracking-widest uppercase font-sans">Spoken English Master Coach</p>
+                </div>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-300">خواتين، نياڻين ۽ ٻارن کي انتهائي سادي ۽ دوستانه ماحول ۾ بنيادي گرامر سان رواني سان انگلش سيکارڻ جا ماهر۔</p>
+                <div class="pt-2 flex justify-center gap-2 flex-wrap text-sm sm:text-base">
+                    <span class="px-2.5 py-1 rounded-xl bg-white/5 text-xs text-gray-300 font-semibold border border-white/5">Interactive Style</span>
+                    <span class="px-2.5 py-1 rounded-xl bg-white/5 text-xs text-gray-300 font-semibold border border-white/5">Grammar Coach</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODERN REVIEWS SECTION -->
+    <section class="py-12 sm:py-36 bg-gradient-to-b from-transparent to-slate-950/50 relative z-10 text-right">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-10 sm:mb-24 space-y-3 sm:space-y-4">
+                <h2 class="sindhi-text text-4xl sm:text-7xl font-black tracking-widest text-white">شاگردن جي <span class="neon-glow-flow">ڪاميابيءَ جون ڪهاڻيون</span></h2>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-300">اسان جي شاگردن جي ڪاميابي ئي اسان جي سڀ کان وڏي سڃاڻپ آهي۔</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5 sm:gap-10">
+                <!-- Review 1 -->
+                <div class="glass-card p-5 sm:p-10 rounded-2xl sm:rounded-3xl relative border border-white/10">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 sm:mb-8 text-lg sm:text-2xl">
+                        ★★★★★
+                    </div>
+                    <p class="sindhi-text text-white text-base sm:text-2xl italic leading-relaxed mb-6 sm:mb-10">"پهرين مونکي انگلش ڳالهائيندي تمام گهڻو ڊپ لڳندو هو، پر سر حسن ۽ آڪسفورڊ اڪيڊمي جي انتهائي آسان ۽ دوستانه ماحول منهنجو اعتماد بحال ڪري ڇڏيو۔ هاڻي مان بنا ڪنهن خوف جي انگلش ڳالهائي سگهان ٿو۔"</p>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4 sm:pt-8 justify-end">
+                        <div class="text-right">
+                            <div class="font-bold text-white text-sm sm:text-lg tracking-wider sindhi-text">محمد علي</div>
+                            <div class="sindhi-text text-[11px] sm:text-sm text-gray-400">Spoken English گريجوئيٽ</div>
+                        </div>
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-extrabold text-sm sm:text-base">م ع</div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-5 sm:p-10 rounded-2xl sm:rounded-3xl relative border border-white/10">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 sm:mb-8 text-lg sm:text-2xl">
+                        ★★★★★
+                    </div>
+                    <p class="sindhi-text text-white text-base sm:text-2xl italic leading-relaxed mb-6 sm:mb-10">"مون هتان کان آئيليٽس (IELTS) جي لائيو ڪلاسز ورتيون ۽ پهرين ئي ڪوشش ۾ 7.5 بينڊ حاصل ڪيا۔ نصاب جو طريقيڪار ۽ موڪ ٽيسٽ واقعي شاندار هئا، اهي به ايتري مناسب فيس ۾۔"</p>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4 sm:pt-8 justify-end">
+                        <div class="text-right">
+                            <div class="font-bold text-white text-sm sm:text-lg tracking-wider sindhi-text">عائشه صديقي</div>
+                            <div class="sindhi-text text-[11px] sm:text-sm text-gray-400">IELTS اسڪالر</div>
+                        </div>
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 font-extrabold text-sm sm:text-base">ع ش</div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-5 sm:p-10 rounded-2xl sm:rounded-3xl relative border border-white/10">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 sm:mb-8 text-lg sm:text-2xl">
+                        ★★★★★
+                    </div>
+                    <p class="sindhi-text text-white text-base sm:text-2xl italic leading-relaxed mb-6 sm:mb-10">"انجلش گرامر ڪورس منهنجي آفيشل اي ميلز لکڻ جي صلاحيت کي معجزاتي طور تي بهتر بڻائي ڇڏيو۔ هاڻي مان پنهنجون اسائنمينٽس ۽ خط بنا ڪنهن غلطيءَ جي پاڻ لکي سگهان ٿي۔ تمام بهترين اڪيڊمي آ!"</p>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4 sm:pt-8 justify-end">
+                        <div class="text-right">
+                            <div class="font-bold text-white text-sm sm:text-lg tracking-wider sindhi-text">زينب خان</div>
+                            <div class="sindhi-text text-[11px] sm:text-sm text-gray-400">گرامر ڪورس شاگردياڻي</div>
+                        </div>
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 font-extrabold text-sm sm:text-base">ز خ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION WITH SMOOTH ACCORDIONS -->
+    <section class="py-12 sm:py-36 max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-right">
+        <div class="text-center mb-10 sm:mb-24 space-y-3 sm:space-y-4">
+            <h2 class="sindhi-text text-4xl sm:text-7xl font-extrabold text-white">عام طور تي <span class="neon-glow-flow">پڇيا ويندڙ سوال</span></h2>
+            <p class="sindhi-text text-base sm:text-2xl text-gray-300">داخلا وٺڻ کان پهريان توهان جي ذهن ۾ موجود سوالن جا تفصيلي جواب۔</p>
+        </div>
+
+        <div class="space-y-4 sm:space-y-8">
+            <!-- Accordion 1 -->
+            <div class="glass-card rounded-xl sm:rounded-3xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleAccordion(this)">
+                <button class="w-full flex items-center justify-between p-5 sm:p-10 text-right focus:outline-none gap-4">
+                    <span class="sindhi-text text-base sm:text-3xl font-bold text-white">ڇا فيس واقعي صرف 1,000 ۽ 2,000 رپيا آهي؟</span>
+                    <svg class="w-4 h-4 sm:w-7 sm:h-7 text-gray-400 accordion-icon transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-5 sm:px-10 pb-5 sm:pb-10 text-gray-300 text-base sm:text-2xl leading-relaxed">
+                    <span class="sindhi-text">جي ها بلڪل! تعليم کي هر غريب ۽ وچولي درجي جي شاگرد تائين پهچائڻ لاءِ اسان ماهوار فيس صرف 1,000 PKR ۽ مڪمل ڪورس فيس هڪ ئي ڀيري ادا ڪرڻ تي صرف 2,000 PKR مقرر ڪئي آهي۔ ان ۾ ٻيو ڪو به لڪيل چارجز ڪونهي۔</span>
+                </div>
+            </div>
+
+            <!-- Accordion 2 -->
+            <div class="glass-card rounded-xl sm:rounded-3xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleAccordion(this)">
+                <button class="w-full flex items-center justify-between p-5 sm:p-10 text-right focus:outline-none gap-4">
+                    <span class="sindhi-text text-base sm:text-3xl font-bold text-white">ڪلاسز آن لائين ٿينديون يا ڪيمپس تي؟</span>
+                    <svg class="w-4 h-4 sm:w-7 sm:h-7 text-gray-400 accordion-icon transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-5 sm:px-10 pb-5 sm:pb-10 text-gray-300 text-base sm:text-2xl leading-relaxed">
+                    <span class="sindhi-text">اسان ٻنهي طريقن سان ڪلاسز فراهم ڪريون ٿا؛ سڄي دنيا مان شاگرد زوم (Zoom App) تي لائيو آن لائين ڪلاسز وٺي سگهن ٿا، جڏهن ته ڪيمپس تي فزيل ڪلاسز پڻ ان ئي مناسب فيس پيڪيج تحت حاصل ڪري سگهجن ٿيون۔</span>
+                </div>
+            </div>
+
+            <!-- Accordion 3 -->
+            <div class="glass-card rounded-xl sm:rounded-3xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleAccordion(this)">
+                <button class="w-full flex items-center justify-between p-5 sm:p-10 text-right focus:outline-none gap-4">
+                    <span class="sindhi-text text-base sm:text-3xl font-bold text-white">ڇا ڪورس مڪمل ٿيڻ تي آفيشل سرٽيفڪيٽ ملندو؟</span>
+                    <svg class="w-4 h-4 sm:w-7 sm:h-7 text-gray-400 accordion-icon transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-5 sm:px-10 pb-5 sm:pb-10 text-gray-300 text-base sm:text-2xl leading-relaxed">
+                    <span class="sindhi-text">جي ها بلڪل! ڪورس جي ڪاميابيءَ سان مڪمل ٿيڻ تي تمام شاگردن کي آڪسفورڊ انگليش اڪيڊمي سنڌ پاران رجسٽرڊ آفيشل سرٽيفڪيٽ ڏنو ويندو، جيڪو سندن نوڪري ۽ سي وي (CV) ۾ فائديمند ثابت ٿيندو۔</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGH-CONTRAST REGISTRATION FORM SECTION -->
+    <section id="admission-form" class="py-12 sm:py-36 px-4 md:px-6 relative overflow-hidden z-10 text-right">
+        <div class="absolute -bottom-24 -left-24 w-48 sm:w-96 h-48 sm:h-96 bg-cyan-600/10 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto glass-card p-5 sm:p-16 rounded-2xl sm:rounded-3xl relative z-10 border border-white/10 shadow-2xl space-y-6 sm:space-y-12">
+
+            <div class="text-center space-y-2.5 sm:space-y-4">
+                <span class="sindhi-text px-4 py-2 rounded-full bg-cyan-500/15 text-cyan-300 text-sm font-bold uppercase tracking-widest">رجسٽريشن سيزن 2026</span>
+                <h2 class="sindhi-text text-2xl sm:text-5xl font-black text-white">
+                    هاڻي ئي <span class="neon-glow-flow">داخلا حاصل ڪريو</span>
+                </h2>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-300">هيٺ ڏنل فارم ڀريو، اسان جي رجسٽريشن ٽيم جلد اوهان سان رابطو ڪندي۔</p>
+            </div>
+
+            <!-- Form -->
+            <form class="space-y-5 sm:space-y-8" onsubmit="handleRegistration(event)">
+                <div class="space-y-2 sm:space-y-3">
+                    <label class="sindhi-text block text-base sm:text-2xl uppercase text-gray-300 font-semibold">توهان جو نالو</label>
+                    <input type="text"
+                        id="form-name"
+                        placeholder="پورو نالو لکو"
+                        required
+                        class="w-full p-4 rounded-xl sm:rounded-2xl premium-input text-white placeholder-gray-600 transition text-right text-base sm:text-xl font-bold sindhi-text">
+                </div>
+
+                <div class="space-y-2 sm:space-y-3">
+                    <label class="sindhi-text block text-base sm:text-2xl uppercase text-gray-300 font-semibold">اي ميل پتو</label>
+                    <input type="email"
+                        id="form-email"
+                        placeholder="example@mail.com"
+                        required
+                        class="w-full p-4 rounded-xl sm:rounded-2xl premium-input text-white placeholder-gray-600 transition text-left text-base sm:text-xl font-bold" style="direction: ltr;">
+                </div>
+
+                <div class="space-y-2 sm:space-y-3">
+                    <label class="sindhi-text block text-base sm:text-2xl uppercase text-gray-300 font-semibold">واٽس اپ يا موبائل نمبر</label>
+                    <input type="tel"
+                        id="form-phone"
+                        placeholder="03000000000"
+                        required
+                        class="w-full p-4 rounded-xl sm:rounded-2xl premium-input text-white placeholder-gray-600 transition text-left text-base sm:text-xl font-bold" style="direction: ltr;">
+                </div>
+                
+                <div class="space-y-2 sm:space-y-3">
+                    <label class="sindhi-text block text-base sm:text-2xl uppercase text-gray-300 font-semibold">گهربل ڪورس ۽ فيس پلان چونڊيو</label>
+                    <select id="form-course" class="sindhi-text w-full p-4 rounded-xl sm:rounded-2xl premium-input text-white bg-[#030712] transition cursor-pointer text-base sm:text-xl font-bold">
+                        <option value="spoken_monthly" class="bg-[#030712]">Spoken English (ماهوار فيس: 1,000 PKR)</option>
+                        <option value="spoken_complete" class="bg-[#030712]">Spoken English (مڪمل فيس: 2,000 PKR)</option>
+                        <option value="ielts_monthly" class="bg-[#030712]">IELTS Prep (ماهوار فيس: 1,000 PKR)</option>
+                        <option value="ielts_complete" class="bg-[#030712]">IELTS Prep (مڪمل فيس: 2,000 PKR)</option>
+                        <option value="grammar_monthly" class="bg-[#030712]">Advanced Grammar (ماهوار فيس: 1,000 PKR)</option>
+                        <option value="grammar_complete" class="bg-[#030712]">Advanced Grammar (مڪمل فيس: 2,000 PKR)</option>
+                    </select>
+                </div>
+
+                <button type="submit"
+                    class="sindhi-text w-full bg-gradient-to-r from-cyan-400 via-purple-500 to-amber-400 hover:from-cyan-500 hover:to-purple-600 p-4 rounded-xl sm:rounded-2xl font-black text-base sm:text-3xl tracking-wide transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-2xl shadow-cyan-500/20 mt-6 sm:mt-12 text-black flex justify-center items-center gap-3 cursor-pointer">
+                    <span id="submit-btn-text">درخواست جمع ڪرايو</span>
+                    <svg id="loading-spinner" class="hidden animate-spin h-5 w-5 sm:h-7 sm:w-7 text-black" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 sm:py-16 text-center text-gray-500 text-xs sm:text-sm border-t border-white/5 bg-slate-950/20">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-10 text-center md:text-right">
+            <div class="text-gray-300 font-extrabold tracking-widest text-base sm:text-2xl neon-glow-cyan">OXFORD ENGLISH ACADEMY SINDH</div>
+            <div class="text-[11px] sm:text-base text-gray-500 tracking-wide sm:tracking-widest">&copy; 2026 Oxford English Academy Sindh. Designed to Perfection. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- COURSE DETAILS MODAL -->
+    <div id="course-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/90 backdrop-blur-md hidden transition-opacity duration-300">
+        <div class="glass-card w-full max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden border border-white/25 shadow-2xl relative transform transition-all scale-95 duration-300" id="modal-container">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white transition p-2 rounded-full bg-white/5 border border-white/10 z-10 cursor-pointer">
+                <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <!-- Dynamic Target Modal Area Filled by JS -->
+            <div id="modal-content-area" class="p-5 sm:p-14 text-right">
+                <!-- Javascript Filled Elements -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS CUSTOM TOAST -->
+    <div id="success-toast" class="fixed bottom-4 left-4 z-50 glass-card border-emerald-500/30 p-5 sm:p-10 rounded-xl sm:rounded-3xl max-w-xs sm:max-w-md hidden transform translate-y-20 transition-all duration-300 shadow-2xl text-right">
+        <div class="flex items-start gap-3 sm:gap-6">
+            <div class="space-y-1 sm:space-y-2 flex-1">
+                <h4 class="sindhi-text font-black text-white text-lg sm:text-3xl">درخواست جمع ٿي وئي!</h4>
+                <p class="sindhi-text text-base sm:text-2xl text-gray-300">اسان جو ڪائونسلر ايندڙ 2 ڪلاڪن اندر اوهان سان واٽس اپ تي رابطو ڪندو۔</p>
+            </div>
+            <div class="w-8 h-8 sm:w-14 sm:h-14 bg-emerald-500/10 border-2 border-emerald-500/25 text-emerald-400 rounded-full flex items-center justify-center text-lg sm:text-3xl shrink-0">✓</div>
+        </div>
+    </div>
+
+    <script>
+        // --- COUNT UP ANIMATED STATS ---
+        function animateValue(obj, start, end, duration, format = '+') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const currentVal = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = currentVal + (format === '%' ? '%' : format);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        window.onload = function() {
+            // Stats activation
+            const studObj = document.getElementById("val-students");
+            const satObj = document.getElementById("val-satisfaction");
+            const ieltsObj = document.getElementById("val-ielts");
+
+            animateValue(studObj, 0, 5000, 2000, '+');
+            animateValue(satObj, 0, 99, 1800, '%');
+            animateValue(ieltsObj, 0, 8, 1500, '.5+');
+
+            // Initialize features
+            loadQuizQuestion();
+            updateCalculator();
+        };
+
+        // --- FAQ ACCORDION LOGIC ---
+        function toggleAccordion(element) {
+            const isActive = element.classList.contains('accordion-active');
+            
+            document.querySelectorAll('.accordion-active').forEach(activeItem => {
+                activeItem.classList.remove('accordion-active');
+            });
+
+            if (!isActive) {
+                element.classList.add('accordion-active');
+            }
+        }
+
+        // --- DYNAMIC FRIENDLY CHATBOT ZARA ---
+        let chatWindowOpen = false;
+        function toggleChatWindow() {
+            const win = document.getElementById('chat-window');
+            if(chatWindowOpen) {
+                win.classList.add('hidden', 'scale-95');
+                chatWindowOpen = false;
+            } else {
+                win.classList.remove('hidden');
+                setTimeout(() => {
+                    win.classList.remove('scale-95');
+                }, 50);
+                chatWindowOpen = true;
+            }
+        }
+
+        const botReplies = {
+            courses_info: "اسان وٽ 3 پريميئم لائيو ڪورسز دستياب آهن:\n1. **Spoken English** (روانيءَ سان انگريزي ڳالهايو)\n2. **IELTS Expert** (بين الاقوامي بينڊ اسڪورنگ)\n3. **Advanced Grammar** (پروفيشنل لکڻين ۽ گرامر جا اصول)\n\ne-Learning جا هي سڀ ڪورس سر حسن علي جتوئيءَ جي نگرانيءَ ۾ تيار ڪيا ويا آهن۔",
+            fee_structure: "اسان وٽ سنڌ جي شاگردن لاءِ سڀ کان مناسب فيس رکيل آهي:\n- ماهوار فيس پلان: **1,000 PKR**\n- مڪمل ڪورس هڪ ڀيرو ادا ڪرڻ تي: **2,000 PKR**\n\nان کان علاوه ڪوبه داخلا فيس يا لڪيل چارجز ڪونهي!",
+            class_timing: "شاگردن ۽ ڪم ڪندڙ پروفيشنلز لاءِ لچڪدار وقت موجود آهن:\n- مارننگ بيچ: 10:00 AM کان 11:30 AM\n- آفٽرنون بيچ: 3:00 PM کان 4:30 PM\n- ايوننگ بيچ: 7:00 PM کان 8:30 PM\n\nڪلاسز لائيو ٿينديون آهن ۽ ليڪچر رڪارڊنگ پڻ فراهم ڪئي ويندي آهي۔",
+            demo_class: "جي ها بلڪل! اسان توهان کي **3 ڏينهن جا فري ڊيمو ڪلاسز** فراهم ڪنداسين ته جيئن توهان اڪيڊمي جي پڙهائڻ واري معيار کي پرکي سگهو۔ داخلا فارم ڀريو، اسان ڊيمو ڪلاس جي لنڪ موڪلي ڏينداسين۔"
+        };
+
+        function sendQuickMessage(key) {
+            const msgsArea = document.getElementById('chat-messages');
+            
+            const userLabels = {
+                courses_info: "ڪورسز جي تفصيل؟",
+                fee_structure: "فيس ڪيتري آهي؟",
+                class_timing: "ڪلاس جو وقت؟",
+                demo_class: "مفت ڊيمو ڪلاسز؟"
+            };
+
+            const userBubble = document.createElement('div');
+            userBubble.className = "flex items-start justify-end gap-2 sm:gap-3";
+            userBubble.innerHTML = `
+                <div class="sindhi-text bg-gradient-to-r from-cyan-400 to-purple-500 rounded-xl p-3 sm:p-5 text-sm sm:text-2xl text-black font-bold max-w-[85%] leading-relaxed text-right shadow-md">
+                    ${userLabels[key]}
+                </div>
+            `;
+            msgsArea.appendChild(userBubble);
+            msgsArea.scrollTop = msgsArea.scrollHeight;
+
+            const typingBubble = document.createElement('div');
+            typingBubble.id = 'chat-typing-status';
+            typingBubble.className = "flex items-start gap-2 sm:gap-3";
+            typingBubble.innerHTML = `
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center font-bold text-[10px] shrink-0">Z</div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-5 flex items-center gap-1.5 shadow-md">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+            `;
+            msgsArea.appendChild(typingBubble);
+            msgsArea.scrollTop = msgsArea.scrollHeight;
+
+            setTimeout(() => {
+                const typingStatus = document.getElementById('chat-typing-status');
+                if(typingStatus) typingStatus.remove();
+
+                const zaraReply = document.createElement('div');
+                zaraReply.className = "flex items-start gap-2 sm:gap-3";
+                zaraReply.innerHTML = `
+                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center font-bold text-[10px] shrink-0">Z</div>
+                    <div class="sindhi-text bg-white/5 border border-white/10 rounded-xl p-3 sm:p-5 text-sm sm:text-xl text-gray-200 max-w-[85%] leading-relaxed whitespace-pre-line shadow-md text-right">
+                        ${botReplies[key]}
+                    </div>
+                `;
+                msgsArea.appendChild(zaraReply);
+                msgsArea.scrollTop = msgsArea.scrollHeight;
+            }, 1000);
+        }
+
+        // --- INTERACTIVE FEE CALCULATOR ---
+        let calState = {
+            course: 'spoken',
+            format: 'online',
+            plan: 'monthly',
+            fee: 1000
+        };
+
+        const courseMeta = {
+            spoken: { title: "Spoken English", desc: "بنا ڪنهن خوف يا هٻڪ جي روانيءَ سان انگريزي ڳالهائڻ سکو۔" },
+            ielts: { title: "IELTS Expert", desc: "تفصيلي پريڪٽس، روزاني موڪ ٽيسٽ ۽ لائيو انٽرويوز۔" },
+            grammar: { title: "Advanced Grammar", desc: "لکڻ جي صلاحيت ۽ ٻوليءَ جي بنيادي اصولن تي مڪمل عبور حاصل ڪريو۔" }
+        };
+
+        function selectCalCourse(id) {
+            calState.course = id;
+            
+            ['spoken', 'ielts', 'grammar'].forEach(c => {
+                document.getElementById(`cal-${c}`).classList.remove('option-active');
+            });
+            document.getElementById(`cal-${id}`).classList.add('option-active');
+            updateCalculator();
+        }
+
+        function selectCalFormat(id) {
+            calState.format = id;
+
+            ['online', 'physical'].forEach(f => {
+                document.getElementById(`cal-${f}`).classList.remove('option-active');
+            });
+            document.getElementById(`cal-${id}`).classList.add('option-active');
+            updateCalculator();
+        }
+
+        function selectCalPlan(id, price) {
+            calState.plan = id;
+            calState.fee = price;
+
+            ['monthly', 'full'].forEach(p => {
+                document.getElementById(`cal-${p}`).classList.remove('option-active');
+            });
+            document.getElementById(`cal-${id}`).classList.add('option-active');
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            document.getElementById('sum-course-title').innerText = courseMeta[calState.course].title;
+            document.getElementById('sum-course-desc').innerText = courseMeta[calState.course].desc;
+            document.getElementById('sum-base-fee').innerText = `${calState.fee.toLocaleString()} PKR`;
+            
+            document.getElementById('sum-total-fee').innerHTML = `${calState.fee.toLocaleString()} <span class="text-sm sm:text-2xl font-bold text-white mr-1.5">PKR</span>`;
+        }
+
+        function applyWithCal() {
+            const selectEl = document.getElementById('form-course');
+            const targetVal = `${calState.course}_${calState.plan}`;
+            
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].value === targetVal) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // --- GRAMMAR MINI GAME ---
+        const gameData = [
+            {
+                q: "Which one is completely correct?",
+                options: ["He do not like tea.", "He does not like tea.", "He does not likes tea."],
+                answer: 1
+            },
+            {
+                q: "Choose the correct preposition:",
+                options: ["He is good in Speaking.", "He is good at Speaking.", "He is good with Speaking."],
+                answer: 1
+            },
+            {
+                q: "Select the sentence with correct word order:",
+                options: ["I always speak English in class.", "I speak English always in class.", "Always I speak English in class."],
+                answer: 0
+            },
+            {
+                q: "Find the passive voice of: 'Hassan wrote a letter.'",
+                options: ["A letter is written by Hassan.", "A letter was written by Hassan.", "A letter written by Hassan."],
+                answer: 1
+            }
+        ];
+
+        let gameIndex = 0;
+        let gameScore = 0;
+
+        function startGame() {
+            document.getElementById('game-welcome').classList.add('hidden');
+            document.getElementById('game-play').classList.remove('hidden');
+            loadGameQuestion();
+        }
+
+        function loadGameQuestion() {
+            const curQ = gameData[gameIndex];
+            document.getElementById('game-progress-text').innerText = `سوال ${gameIndex + 1}/${gameData.length}`;
+            document.getElementById('game-score-badge').innerText = `اسڪور: ${gameScore * 10}`;
+            
+            const progress = ((gameIndex + 1) / gameData.length) * 100;
+            document.getElementById('game-progress-bar').style.width = progress + '%';
+
+            document.getElementById('game-question-title').innerText = curQ.q;
+
+            const optContainer = document.getElementById('game-options');
+            optContainer.innerHTML = '';
+
+            curQ.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-right p-4 rounded-xl premium-input text-gray-200 hover:text-white hover:bg-white/5 border border-white/10 transition flex justify-between items-center text-sm sm:text-2xl cursor-pointer";
+                btn.innerHTML = `
+                    <span class="w-5 h-5 rounded-full border border-white/30 flex items-center justify-center text-xs text-transparent shrink-0">○</span>
+                    <span>${opt}</span>
+                `;
+                btn.onclick = () => selectGameOption(idx);
+                optContainer.appendChild(btn);
+            });
+        }
+
+        function selectGameOption(selectedIdx) {
+            const curQ = gameData[gameIndex];
+            const feedbackBlock = document.getElementById('game-feedback');
+            feedbackBlock.classList.remove('hidden');
+
+            if(selectedIdx === curQ.answer) {
+                gameScore++;
+                feedbackBlock.className = "mt-4 p-4 rounded-xl text-center font-bold text-sm sm:text-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/25";
+                feedbackBlock.innerText = "درست جواب! تمام شاندار 🎉";
+            } else {
+                feedbackBlock.className = "mt-4 p-4 rounded-xl text-center font-bold text-sm sm:text-2xl bg-red-500/10 text-red-400 border border-red-500/25";
+                feedbackBlock.innerText = "غلط جواب! پريشان نه ٿيو، ڪوشش جاري رکو۔";
+            }
+
+            document.querySelectorAll('#game-options button').forEach(b => b.disabled = true);
+
+            setTimeout(() => {
+                feedbackBlock.classList.add('hidden');
+                if(gameIndex < gameData.length - 1) {
+                    gameIndex++;
+                    loadGameQuestion();
+                } else {
+                    showGameResults();
+                }
+            }, 1500);
+        }
+
+        function showGameResults() {
+            document.getElementById('game-play').classList.add('hidden');
+            const resultPanel = document.getElementById('game-result');
+            resultPanel.classList.remove('hidden');
+
+            document.getElementById('game-result-text').innerHTML = `توهان 4 مان <span class="text-cyan-400 font-extrabold text-2xl sm:text-4xl">${gameScore}</span> اسڪور حاصل ڪيو آهي۔`;
+            
+            const emojiEl = document.getElementById('game-result-emoji');
+            if(gameScore === 4) {
+                emojiEl.innerText = "🥇";
+            } else if(gameScore >= 2) {
+                emojiEl.innerText = "🥈";
+            } else {
+                emojiEl.innerText = "🥉";
+            }
+        }
+
+        function restartGame() {
+            gameIndex = 0;
+            gameScore = 0;
+            document.getElementById('game-result').classList.add('hidden');
+            document.getElementById('game-welcome').classList.remove('hidden');
+        }
+
+        // --- COURSE DETAILS MODAL SYSTEM ---
+        const courseDetails = {
+            spoken: {
+                title: 'Spoken English Course',
+                subtitle: 'رواني، اعليٰ اعتماد ۽ روانيءَ سان ڳالهائڻ سکو',
+                badge: 'بنيادي کان ايڊوانس',
+                duration: '2 مهينا (روزانو لائيو ڪلاسز)',
+                level: 'ڪير به سکي سگهي ٿو',
+                modules: [
+                    'خود اعتمادي وڌائڻ ۽ روزمره جي ڳالهه ٻولهه جو مشقون',
+                    'اکرن جي صحيح اچار ۽ لهجي جي درستگي (Accent Correctness)',
+                    'عوامي خطاب (Public Speaking) ۽ لائيو مباحثا',
+                    'سر حسن علي جتوئيءَ پاران انفرادي رهنمائي ۽ موٽ'
+                ],
+                price: 'ماهوار: 1,000 | مڪمل ڪورس: 2,000 PKR'
+            },
+            ielts: {
+                title: 'IELTS Expert Prep',
+                subtitle: 'پهرين ئي ڪوشش ۾ پنهنجو گهربل بينڊ حاصل ڪريو',
+                badge: 'Academic ۽ General ٽريننگ',
+                duration: '3 مهينا (هفتي ۾ 5 ڏينهن ڪلاس)',
+                level: 'بنيادي انگلش جا ڄاڻو ماڻهو',
+                modules: [
+                    'چئني ماڊيولز (Listening, Reading, Writing, Speaking) جي مڪمل تياري',
+                    'ماهر استادن جي نگرانيءَ ۾ لڳاتار لائيو موڪ ٽيسٽ (Mock Tests)',
+                    'مقالن ۽ خطن جي انفرادي چيڪنگ ۽ رهنمائي',
+                    'مخصوص اسپيڪنگ ٽيسٽ جي تياري لاءِ ون-ٽو-ون لائيو انٽرويوز'
+                ],
+                price: 'ماهوار: 1,000 | مڪمل ڪورس: 2,000 PKR'
+            },
+            grammar: {
+                title: 'Advanced English Grammar',
+                subtitle: 'لکڻ ۽ ڳالهائڻ جي بنيادي اڏاوتن تي مڪمل عبور',
+                badge: 'پروفيشنل ۽ اڪيڊمڪ',
+                duration: '1.5 مهينا (روزانو لائيو ڪلاسز)',
+                level: 'بنيادي انگلش سکندڙ',
+                modules: [
+                    'ٽينسز ۽ جملن جي جوڙجڪ تي مڪمل دسترس (Tenses & Structures)',
+                    'Active/Passive ۽ Direct/Indirect جو صحيح ۽ لائيو استعمال',
+                    'پروفيشنل اي ميلز، درخواستن ۽ ليٽرز لکڻ جو معيار',
+                    'ايڊوانس آفيشل لفظن جو ذخيرو ۽ انهن جو لکڻين ۾ استعمال'
+                ],
+                price: 'ماهوار: 1,000 | مڪمل ڪورس: 2,000 PKR'
+            }
+        };
+
+        function openModal(courseKey) {
+            const modal = document.getElementById('course-modal');
+            const container = document.getElementById('modal-container');
+            const data = courseDetails[courseKey];
+            
+            if(!data) return;
+
+            let modulesHTML = '';
+            data.modules.forEach(mod => {
+                modulesHTML += `
+                    <li class="flex items-center gap-2.5 text-gray-200 text-sm sm:text-2xl py-1.5 sm:py-3 justify-end">
+                        <span>${mod}</span>
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 shrink-0"></span>
+                    </li>
+                `;
+            });
+
+            document.getElementById('modal-content-area').innerHTML = `
+                <div class="mb-3 sm:mb-6 text-right">
+                    <span class="px-3.5 py-1 text-xs font-bold rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/30 font-sans">${data.badge}</span>
+                </div>
+                <h3 class="sindhi-text text-xl sm:text-5xl font-black text-white mb-1.5 text-right font-sans">${data.title}</h3>
+                <p class="sindhi-text text-sm sm:text-2xl text-gray-300 mb-4 sm:mb-10 font-medium text-right font-sans">${data.subtitle}</p>
+
+                <div class="grid grid-cols-2 gap-3 sm:gap-8 mb-4 sm:mb-10">
+                    <div class="p-3 sm:p-6 bg-white/5 border border-white/10 rounded-xl text-right shadow-md">
+                        <span class="sindhi-text block text-xs text-amber-400 font-bold uppercase mb-1">ڪورس جو مدو</span>
+                        <span class="sindhi-text text-sm sm:text-2xl font-semibold text-white">${data.duration}</span>
+                    </div>
+                    <div class="p-3 sm:p-6 bg-white/5 border border-white/10 rounded-xl text-right shadow-md">
+                        <span class="sindhi-text block text-xs text-amber-400 font-bold uppercase mb-1">ڪورس جي فيس</span>
+                        <span class="sindhi-text text-sm sm:text-2xl font-semibold text-cyan-400">${data.price}</span>
+                    </div>
+                </div>
+
+                <div class="mb-6 sm:mb-12 text-right">
+                    <h4 class="sindhi-text font-bold text-white mb-3 sm:mb-6 text-lg sm:text-3xl font-sans">ڪورس جو نصاب ۽ خاصيتون:</h4>
+                    <ul class="space-y-1.5 sm:space-y-4">
+                        ${modulesHTML}
+                    </ul>
+                </div>
+
+                <div class="flex gap-3 sm:gap-8 w-full">
+                    <button onclick="closeModal()" class="sindhi-text w-1/2 bg-white/5 hover:bg-white/10 text-white font-bold p-3 sm:p-6 rounded-xl text-center transition border border-white/15 text-sm sm:text-2xl cursor-pointer">
+                        بند ڪريو
+                    </button>
+                    <a href="#admission-form" onclick="selectCourseInForm('${courseKey}')" class="sindhi-text w-1/2 bg-gradient-to-r from-cyan-400 to-purple-500 hover:from-cyan-500 hover:to-purple-600 text-black text-center font-black p-3 sm:p-6 rounded-xl transition text-sm sm:text-2xl flex justify-center items-center shadow-2xl shadow-cyan-500/20">
+                        هاڻي داخلا وٺو
+                    </a>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            }, 50);
+        }
+
+        // --- ASSESSMENT LEVEL QUIZ ---
+        const quizData = [
+            {
+                q: "She ________ to school every single day.",
+                options: ["go", "goes", "going", "gone"],
+                answer: 1
+            },
+            {
+                q: "I have been writing my thesis ________ morning.",
+                options: ["for", "since", "from", "at"],
+                answer: 1
+            },
+            {
+                q: "Identify the tense: 'They will have finished their task by night.'",
+                options: ["Present Perfect", "Future Continuous", "Future Perfect", "Past Simple"],
+                answer: 2
+            },
+            {
+                q: "Passive Voice of 'She plays cricket' is:",
+                options: ["Cricket is played by her", "Cricket was played by her", "Cricket played by her", "She has played cricket"],
+                answer: 0
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuizQuestion() {
+            const progress = ((currentQuestionIndex + 1) / quizData.length) * 100;
+            document.getElementById('quiz-progress').style.width = progress + '%';
+            
+            document.getElementById('question-number').innerText = `سوال ${currentQuestionIndex + 1}/${quizData.length}`;
+            
+            const currentQ = quizData[currentQuestionIndex];
+            document.getElementById('question-text').innerText = currentQ.q;
+            
+            const optionsGroup = document.getElementById('options-group');
+            optionsGroup.innerHTML = '';
+            
+            currentQ.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = "w-full text-right p-4 rounded-xl premium-input text-gray-200 hover:text-white hover:bg-white/5 border border-white/10 transition flex justify-between items-center text-sm sm:text-2xl cursor-pointer focus:outline-none";
+                btn.innerHTML = `
+                    <span class="w-5 h-5 rounded-full border border-white/30 flex items-center justify-center text-xs text-transparent shrink-0">○</span>
+                    <span>${opt}</span>
+                `;
+                btn.onclick = () => selectOption(idx);
+                optionsGroup.appendChild(btn);
+            });
+        }
+
+        function selectOption(selectedIndex) {
+            const currentQ = quizData[currentQuestionIndex];
+            if(selectedIndex === currentQ.answer) {
+                score++;
+            }
+
+            if(currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                loadQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            const resultBlock = document.getElementById('result-block');
+            resultBlock.classList.remove('hidden');
+
+            document.getElementById('result-score').innerHTML = `توهان جو اسڪور: <span class="text-cyan-400 font-bold">${score}/${quizData.length}</span>`;
+
+            let advice = "";
+            if(score === 4) {
+                advice = "ماشاءَ الله! توهان جي انگريزيءَ جي بنيادي پڪ پختي ۽ بهترين آهي۔ اسان اوهان کي آئيليٽس (IELTS Expert) ڪورس ڪرڻ جو مشورو ڏيون ٿا ته جيئن پنهنجا خواب پورا ڪري سگهو۔";
+            } else if(score === 2 || score === 3) {
+                advice = "تمام بهترين ڪوشش! اوهان جو گرامر ته صحيح آهي پر ڳالهائڻ ۾ رووانيءَ جي ضرورت آهي۔ اسان اوهان کي Spoken English ڪورس ڪرڻ جو مشورو ڏينداسين۔";
+            } else {
+                advice = "پريشان ٿيڻ جي ڪا به ضرورت ناهي! توهان جي بنيادي گرامر کي درست ڪرڻ جي ضرورت آهي۔ اسان مشورو ڏينداسين ته پهرين Advanced English Grammar ڪورس کان شروعات ڪريو۔";
+            }
+            document.getElementById('result-advice').innerText = advice;
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById('result-block').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        // --- CLOSE MODAL ---
+        function closeModal() {
+            const modal = document.getElementById('course-modal');
+            const container = document.getElementById('modal-container');
+            container.classList.remove('scale-100');
+            container.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        function selectCourseInForm(courseKey) {
+            closeModal();
+            const selectEl = document.getElementById('form-course');
+            // Default to monthly plan for selected course
+            const targetVal = `${courseKey}_monthly`;
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].value === targetVal) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // --- SUBMIT REGISTRATION HANDLER ---
+        function handleRegistration(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const phone = document.getElementById('form-phone').value;
+            const course = document.getElementById('form-course').value;
+
+            const submitBtnText = document.getElementById('submit-btn-text');
+            const spinner = document.getElementById('loading-spinner');
+
+            submitBtnText.innerText = "پروسيس ٿي رهيو آهي...";
+            spinner.classList.remove('hidden');
+
+            setTimeout(() => {
+                document.getElementById('form-name').value = '';
+                document.getElementById('form-email').value = '';
+                document.getElementById('form-phone').value = '';
+                
+                submitBtnText.innerText = "درخواست جمع ڪرايو";
+                spinner.classList.add('hidden');
+
+                showSuccessToast();
+            }, 1200);
+        }
+
+        function showSuccessToast() {
+            const toast = document.getElementById('success-toast');
+            toast.classList.remove('hidden', 'translate-y-20');
+            toast.classList.add('translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 6000);
+        }
+    </script>
+</body>
+</html>

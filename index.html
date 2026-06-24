@@ -3,1229 +3,890 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آڪسفورڊ انگلش سنڌي اسڪول | Oxford English Sindhi School</title>
+    <title>Oxford English Academy - آن لائن داخلا پورٽل</title>
 
-    <!-- Tailwind CSS for modern design tokens -->
+    <!-- Tailwind CSS for high contrast utility design -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            // Deep black-slate for maximum readability & high contrast
+                            dark: '#030712', 
+                            card: '#0f172a', // Solid clear slate card
+                            accent: '#38bdf8', // Bright readable sky blue
+                            hover: '#0ea5e9',
+                            success: '#10b981',
+                            textLight: '#f8fafc', // Clean crisp white text
+                            textMuted: '#e2e8f0'  // Light gray-blue (extremely high contrast)
+                        }
+                    },
+                    fontFamily: {
+                        sindhi: ['"Lateef"', 'Inter', 'serif'],
+                        english: ['Poppins', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Lateef for elegant calligraphic Sindhi, Poppins for bold English modern headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700;800&family=Lateef:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Google Fonts for majestic calligraphy and high-contrast styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for modern visual icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        :root {
-            --brand-primary: #00f0ff;    /* Glowing Electric Cyan */
-            --brand-secondary: #00ffaa;  /* Bright Luminous Mint */
-            --brand-accent: #ffb700;     /* Vivid Neon Gold */
-            --brand-pink: #ff007f;       /* Electric Pink */
-            --bg-dark: #02040a;          /* Pitch Obsidian Dark Black */
-            --card-bg: rgba(255, 255, 255, 0.02);
-            --card-border: rgba(255, 255, 255, 0.08);
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
         }
-
-        body {
-            background-color: var(--bg-dark);
-            color: #f1f5f9;
-            font-family: "Lateef", "Plus Jakarta Sans", serif;
-            font-size: 1.6rem; /* Extra large font size for effortless reading */
-            overflow-x: hidden;
-            letter-spacing: 0.02em;
-        }
-
-        @media (min-width: 768px) {
-            body {
-                font-size: 1.85rem; /* Majestic legibility on tablet and desktops */
-            }
-        }
-
-        /* Spacious & Elegant Sindhi Typography Rules customized for Lateef Font */
-        .sindhi-text {
-            font-family: "Lateef", serif;
-            line-height: 2.2 !important; /* Extremely loose height to prevent dot overlaps */
-            letter-spacing: 0.04em !important;
-            word-spacing: 0.16em !important; /* Perfect word breaks for reader comfort */
-        }
-
-        @media (min-width: 768px) {
-            .sindhi-text {
-                line-height: 2.4 !important;
-                word-spacing: 0.20em !important;
-            }
-        }
-
-        @keyframes neonPulseCyan {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 25px rgba(0, 240, 255, 0.5);
-                color: #00f0ff;
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(0, 240, 255, 0.95), 0 0 45px rgba(0, 240, 255, 0.8);
-                color: #ffffff;
-            }
-        }
-
-        @keyframes neonPulseGold {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(255, 183, 0, 0.7), 0 0 25px rgba(255, 183, 0, 0.5);
-                color: #ffb700;
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(255, 183, 0, 0.95), 0 0 40px rgba(255, 183, 0, 0.8);
-                color: #ffffff;
-            }
-        }
-
-        @keyframes textGlowShift {
-            0% {
-                color: #00f0ff;
-                text-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5);
-            }
-            33% {
-                color: #00ffaa;
-                text-shadow: 0 0 15px rgba(0, 255, 170, 0.8), 0 0 30px rgba(0, 255, 170, 0.5);
-            }
-            66% {
-                color: #ffb700;
-                text-shadow: 0 0 15px rgba(255, 183, 0, 0.8), 0 0 30px rgba(255, 183, 0, 0.5);
-            }
-            100% {
-                color: #00f0ff;
-                text-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5);
-            }
-        }
-
-        @keyframes slideDownHeader {
-            0% {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .animate-slide-down-header {
-            animation: slideDownHeader 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .neon-glow-cyan {
-            animation: neonPulseCyan 3s infinite ease-in-out;
-        }
-        .neon-glow-gold {
-            animation: neonPulseGold 3.5s infinite ease-in-out;
-        }
-        .neon-glow-flow {
-            animation: textGlowShift 8s infinite ease-in-out;
-        }
-
-        /* Ambient Cosmic Background Orbs */
-        .glow-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.15;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Premium Ultra-Glassmorphism Card */
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--card-border);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass-card:hover {
-            transform: translateY(-6px);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(0, 240, 255, 0.35);
-            box-shadow: 0 30px 60px rgba(0, 240, 255, 0.2);
-        }
-
-        /* Floating Animation for UI elements */
-        .floating-element {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
-
-        .option-active {
-            border-color: var(--brand-primary) !important;
-            background: rgba(0, 240, 255, 0.12) !important;
-            color: #ffffff !important;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-        }
-
-        .premium-input {
-            background: rgba(0, 0, 0, 0.5);
-            border: 1.5px solid rgba(255, 255, 255, 0.12);
-            transition: all 0.3s ease;
-        }
-
-        .premium-input:focus {
-            background: rgba(0, 0, 0, 0.9);
-            border-color: var(--brand-primary);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
-            outline: none;
-        }
-
+        /* Custom scrollbar to match high contrast theme */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
+            background: #030712;
         }
         ::-webkit-scrollbar-thumb {
             background: #1e293b;
-            border-radius: 10px;
+            border-radius: 5px;
+            border: 2px solid #030712;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--brand-primary);
+            background: #38bdf8;
         }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+        /* Glowing premium animation for buttons and indicators */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(56, 189, 248, 0.4); }
+            50% { box-shadow: 0 0 18px rgba(56, 189, 248, 0.8); }
         }
-        .accordion-active .accordion-content {
-            max-height: 350px;
-            padding-top: 1.5rem;
+        .glow-effect {
+            animation: pulse-glow 2s infinite;
         }
-        .accordion-active .accordion-icon {
-            transform: rotate(180deg);
-            color: var(--brand-primary);
+        /* Optimized Lateef typography sizes for maximum readability */
+        .font-sindhi {
+            font-family: 'Lateef', serif;
+            font-size: 1.5rem; /* Large and clear for easy reading */
+            line-height: 1.8;
         }
-
-        .typing-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--brand-primary);
-            border-radius: 50%;
-            animation: typingBounce 1s infinite alternate;
+        h1.font-sindhi {
+            font-size: 2.8rem;
+            line-height: 1.4;
         }
-        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes typingBounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-8px); }
+        @media (min-width: 768px) {
+            .font-sindhi {
+                font-size: 1.7rem;
+            }
+            h1.font-sindhi {
+                font-size: 4.5rem;
+                line-height: 1.3;
+            }
         }
     </style>
 </head>
-<body class="antialiased selection:bg-cyan-500 selection:text-black">
 
-    <!-- COSMIC GLOW LIGHTS -->
-    <div class="glow-orb top-10 left-10 w-[320px] md:w-[650px] h-[320px] md:h-[650px] bg-cyan-600/10"></div>
-    <div class="glow-orb top-[30%] right-10 w-[350px] md:w-[700px] h-[350px] md:h-[700px] bg-emerald-600/10"></div>
-    <div class="glow-orb bottom-10 left-[10%] w-[320px] md:w-[650px] h-[320px] md:h-[650px] bg-amber-600/10"></div>
+<body class="bg-brand-dark text-brand-textLight font-sindhi min-h-screen selection:bg-brand-accent selection:text-brand-dark">
 
-    <!-- MAJESTIC FIXED HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-40 px-3 sm:px-6 py-3 sm:py-5 animate-slide-down-header">
-        <div class="max-w-7xl mx-auto glass-card rounded-2xl md:rounded-3xl px-4 sm:px-8 py-3 sm:py-5 flex items-center justify-between backdrop-blur-2xl border border-white/10 shadow-3xl">
-            <!-- School Brand with Premium Dynamic Glow -->
-            <div class="flex items-center gap-2 sm:gap-4">
-                <span class="p-1 sm:p-2 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 flex items-center justify-center border border-cyan-400/40 shrink-0">
-                    <img src="https://i.ibb.co/Vcmq5RL0/file-00000000330071fa8b3767db78155c3f.png" 
-                         alt="Oxford English Academy Logo" 
-                         class="h-8 w-auto min-[360px]:h-10 min-[400px]:h-12 sm:h-14 md:h-16 lg:h-20 object-contain rounded-md filter drop-shadow-[0_0_10px_rgba(0,240,255,0.6)]"
-                         onerror="this.src='https://placehold.co/120x120/030712/00f0ff?text=OEA'">
-                </span>
-                <div class="flex flex-col gap-0 text-right">
-                    <span class="text-[10px] min-[360px]:text-[12px] min-[400px]:text-sm sm:text-lg md:text-2xl font-black neon-glow-cyan leading-none tracking-tight">OXFORD ENGLISH SINDHI</span>
-                    <span class="text-[7px] min-[360px]:text-[9px] sm:text-xs text-gray-400 tracking-widest uppercase font-bold leading-none mt-1">SINDHI SCHOOL PORTAL</span>
+    <!-- TOP NOTIFICATION BANNER -->
+    <div class="bg-gradient-to-r from-sky-950 via-slate-900 to-sky-950 text-center py-2.5 px-4 text-sm md:text-base font-bold flex items-center justify-center gap-2 border-b-2 border-sky-400 text-sky-300">
+        <span class="inline-flex h-3 w-3 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>🎉 خاص آڇ: هاڻي هر ڪورس صرف Rs. 1,000 ۾! اڄ ئي پنهنجي سيٽ پڪي ڪريو.</span>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-brand-dark/95 border-b border-slate-700 px-4 py-3 shadow-md backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-gradient-to-tr from-brand-accent to-sky-600 p-2 rounded-xl shadow-lg shadow-brand-accent/30">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-brand-dark"></i>
                 </div>
+                <div>
+                    <span class="font-english font-extrabold text-2xl bg-gradient-to-r from-brand-accent to-white bg-clip-text text-transparent">OXFORD</span>
+                    <span class="block text-xs tracking-wider text-brand-accent font-english font-bold">ENGLISH ACADEMY</span>
+                </div>
+            </a>
+            
+            <div class="flex items-center gap-3">
+                <a href="#admission-section" class="bg-brand-accent hover:bg-brand-hover text-brand-dark px-5 py-2.5 rounded-xl font-extrabold text-base md:text-lg transition-all duration-300 shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-user-plus text-sm"></i>
+                    <span>داخلا فارم</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative overflow-hidden pt-14 pb-20 px-4 border-b border-slate-800">
+        <!-- Abstract gradient background glows to add modern depth without sacrificing text visibility -->
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-sky-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- High contrast badge -->
+            <div class="inline-flex items-center gap-2 bg-slate-900 border-2 border-slate-700 rounded-full px-5 py-2 mb-6 text-base shadow-md">
+                <i class="fa-solid fa-award text-brand-accent"></i>
+                <span class="text-brand-accent font-extrabold">سنڌ جو نمبر #1 آن لائن انگلش پورٽل</span>
             </div>
 
-            <!-- Navigation Links (Desktop Only) -->
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-10 text-xl font-bold text-gray-300 tracking-wider">
-                <a href="#courses" class="hover:text-cyan-400 transition-all sindhi-text">اسان جا ڪورسز</a>
-                <a href="#features" class="hover:text-cyan-400 transition-all sindhi-text">خاصيتون</a>
-                <a href="#grammar-arena" class="hover:text-cyan-400 transition-all flex items-center gap-2 sindhi-text">
-                    50 Qs گيم زون <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/25 text-cyan-400 text-[11px] font-black animate-pulse">مفت 🎮</span>
-                </a>
-                <a href="#faculty" class="hover:text-cyan-400 transition-all sindhi-text">استاد</a>
-                <a href="#reviews-board" class="hover:text-cyan-400 transition-all sindhi-text">تبصرا (20)</a>
-                <a href="#admission-form" class="hover:text-cyan-400 transition-all sindhi-text">داخلا فارم</a>
-            </nav>
+            <!-- Main Heading (Highly polished & clear contrast) -->
+            <h1 class="text-3xl md:text-6xl font-bold font-sindhi leading-relaxed md:leading-normal mb-6 text-white">
+                صرف <span class="text-brand-accent bg-slate-900 px-4 py-1.5 rounded-2xl border-2 border-brand-accent/30">30 ڏينهن</span> ۾ رواني سان انگلش ڳالهائڻ سکو!
+            </h1>
 
-            <!-- Navigation Actions -->
-            <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-                <a href="#grammar-arena" class="hidden sm:inline-flex items-center gap-2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/25 text-xs px-4 py-2.5 rounded-xl font-black transition-all">
-                    <span class="sindhi-text text-sm">گرامر گيم</span>
-                    <span class="animate-pulse">⚡</span>
+            <!-- Subtitle with crisp, easy-to-read text -->
+            <p class="text-lg md:text-2xl text-brand-textMuted max-w-3xl mx-auto leading-relaxed mb-8">
+                🇵🇰 سنڌي شاگردن لاءِ بلڪل آسان طريقي سان تيار ڪيل جديد انگريزي سسٽم. گرامر جي بنيادي اصولن کان وٺي رواني سان ڳالهائڻ تائين مڪمل تربيت، هاڻي ناقابلِ يقين حد تائين گهٽ فيس سان.
+            </p>
+
+            <!-- CTA Buttons with premium visible colors -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#admission-section" class="glow-effect w-full sm:w-auto bg-brand-accent hover:bg-brand-hover text-brand-dark px-8 py-4.5 rounded-2xl font-black text-xl transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>هاڻي داخلا وٺو (Rs. 1,000)</span>
                 </a>
-                <a href="#admission-form" class="bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-500 hover:to-emerald-500 text-black font-black px-3 sm:px-8 py-2 sm:py-4 rounded-xl text-xs sm:text-xl transition-all shadow-xl shadow-cyan-500/20 sindhi-text">
-                    داخلا وٺو 🚀
+                <a href="#courses-section" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-brand-textLight border-2 border-slate-700 px-8 py-4.5 rounded-2xl font-black text-xl transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-book-open text-brand-accent"></i>
+                    <span>ڪورسز جا تفصيل</span>
                 </a>
+            </div>
+
+            <!-- High contrast Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-8 border-t-2 border-slate-800">
+                <div class="bg-brand-card border-2 border-slate-800 p-4 rounded-2xl">
+                    <div class="font-english font-black text-2xl md:text-3xl text-brand-accent">5,000+</div>
+                    <div class="text-sm text-brand-textMuted font-bold mt-1">ڪامياب شاگرد</div>
+                </div>
+                <div class="bg-brand-card border-2 border-slate-800 p-4 rounded-2xl">
+                    <div class="font-english font-black text-2xl md:text-3xl text-brand-accent">100%</div>
+                    <div class="text-sm text-brand-textMuted font-bold mt-1">آن لائن ليو ڪلاسز</div>
+                </div>
+                <div class="bg-brand-card border-2 border-slate-800 p-4 rounded-2xl">
+                    <div class="font-english font-black text-2xl md:text-3xl text-brand-accent">Rs. 1,000</div>
+                    <div class="text-sm text-yellow-400 font-bold mt-1">مڪمل ڪورس فيس</div>
+                </div>
+                <div class="bg-brand-card border-2 border-slate-800 p-4 rounded-2xl">
+                    <div class="font-english font-black text-2xl md:text-3xl text-brand-accent">24/7</div>
+                    <div class="text-sm text-brand-textMuted font-bold mt-1">واٽس اپ سپورٽ</div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION WITH HIGH-CONTRAST SINDHI COPY -->
-    <section class="relative min-h-screen flex items-center justify-center pt-28 sm:pt-40 md:pt-52 pb-16 md:pb-36 px-4 md:px-6 overflow-hidden">
-        <div class="max-w-6xl mx-auto text-center relative z-10 space-y-10 md:space-y-16">
-            
-            <!-- School Welcome Dynamic Badge -->
-            <div class="inline-flex items-center gap-3 px-5 sm:px-10 py-3 sm:py-5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-lg font-semibold tracking-wider text-cyan-300 backdrop-blur-md floating-element">
-                <span class="flex h-3.5 w-3.5 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-cyan-500"></span>
-                </span>
-                <span class="sindhi-text text-lg sm:text-2xl font-bold">📚 اچو ته انگريزي ڳالهايون! صرف هڪ مهيني ۾ رواني سان!</span>
-            </div>
-
-            <!-- Main Interactive Calligraphy Heading -->
-            <h1 class="text-4xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-black tracking-wider leading-none text-white space-y-3 sindhi-text">
-                آڪسفورڊ انگلش <span class="neon-glow-flow">سنڌي اسڪول</span>
-                <span class="block text-2xl sm:text-4xl lg:text-6xl text-cyan-400 mt-4 tracking-normal font-sans">Oxford English Sindhi School</span>
-            </h1>
-
-            <!-- Ultra-Legible Spacious Subtitle Copy -->
-            <p class="sindhi-text text-xl sm:text-3xl lg:text-4xl text-gray-200 max-w-5xl mx-auto leading-relaxed md:leading-loose px-2">
-                ڇا توهان انگريزي سمجهڻ، ڳالهائڻ، پڙهڻ يا لکڻ ۾ ڏکيائي محسوس ڪندا آهيو؟ هاڻي پريشان ٿيڻ جي ضرورت ناهي! 
-                <span class="block text-white font-black my-4 text-2xl sm:text-4xl neon-glow-cyan">صرف هڪ مهيني ۾ رواني سان انگريزي ڳالهايو — اهو به بنا ڪنهن هٻڪ، ڊپ يا شرم جي!</span>
-                آڪسفورڊ اوهان لاءِ کڻي آيو آهي جديد ۽ آسان انگريزي سکيا جو پروگرام، جتي هر شاگرد کي عملي طريقي سان انگريزي سيکاريو وڃي ٿو۔
-            </p>
-
-            <!-- Direct CTA Options -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 px-2 max-w-4xl mx-auto w-full">
-                <a href="https://wa.me/923083500829?text=السلام%20عليڪم%20آڪسفورڊ%20اسڪول%20مان%20داخلا%20وٺڻ%20چاهيان%20ٿو" target="_blank" 
-                   class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-black font-extrabold px-6 sm:px-12 py-4 sm:py-6 rounded-2xl text-lg sm:text-2xl inline-flex items-center justify-center gap-3 transition-all transform hover:scale-[1.03] shadow-2xl">
-                    <svg class="w-6 h-6 sm:w-10 sm:h-10 fill-current text-black" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.053 1.048 11.43 1.048c-5.439 0-9.865 4.371-9.869 9.8a9.65 9.65 0 0 0 1.485 5.008l-.319 1.162-.777 2.833 2.9-.76 1.15-.303zm12.515-4.808c-.354-.177-2.095-1.033-2.42-1.151-.325-.119-.562-.177-.797.177-.236.354-.913 1.151-1.121 1.386-.206.236-.413.265-.767.088-2.607-1.111-4.223-2.613-5.267-4.417-.275-.473.275-.44.788-1.464.088-.177.044-.332-.022-.465-.066-.133-.562-1.353-.77-1.853-.204-.491-.41-.424-.562-.432-.144-.007-.31-.008-.477-.008s-.438.063-.667.312c-.23.25-.875.855-.875 2.086 0 1.231.896 2.42 1.017 2.584.121.163 1.763 2.693 4.27 3.778 1.457.63 2.333.826 3.125.751.884-.084 2.096-.855 2.391-1.681.295-.827.295-1.534.207-1.681-.088-.146-.325-.235-.679-.413z"/></svg>
-                    <span class="sindhi-text text-xl sm:text-2xl font-black">واٽس اپ رابطو: 03083500829</span>
-                </a>
-                <a href="#grammar-arena" class="w-full sm:w-auto bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold px-6 sm:px-12 py-4 sm:py-6 rounded-2xl text-xl sm:text-2xl transition-all text-center sindhi-text">
-                    گرامر راند شروع ڪريو 🎮
-                </a>
-            </div>
-
-            <!-- Dynamic Highlight Slogans -->
-            <div class="pt-6 text-center space-y-2">
-                <span class="block text-amber-400 font-extrabold text-xl sm:text-3xl tracking-widest uppercase font-sans">"Learn English, Build Confidence, Change Your Future."</span>
-                <span class="block text-emerald-400 font-extrabold text-lg sm:text-2xl sindhi-text">"اڄ ئي شروع ڪريو، سڀاڻي رواني سان انگريزي ڳالهايو!"</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAJESTIC FEATURES SHOWCASE -->
-    <section id="features" class="py-16 sm:py-32 max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-right">
-        <div class="text-center mb-12 sm:mb-24 space-y-4">
-            <span class="px-4 py-1.5 rounded-full bg-cyan-500/15 text-cyan-300 text-xs sm:text-sm font-bold tracking-widest uppercase sindhi-text">اسان جون خاصيتون</span>
-            <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">آڪسفورڊ اسڪول ڇو <span class="neon-glow-flow">بهترين آهي؟</span></h2>
-            <p class="sindhi-text text-lg sm:text-2xl text-gray-300 max-w-2xl mx-auto">اسان جو مڪمل نظام سنڌي شاگردن جي ضرورتن کي نظر ۾ رکندي ٺاهيو ويو آهي۔</p>
+    <!-- INTERACTIVE COURSES SECTION -->
+    <section id="courses-section" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">📚 اسان جا خاص ڪورسز</h2>
+            <p class="text-brand-textMuted text-lg md:text-xl max-w-2xl mx-auto">پنهنجي ضرورت جي مطابق ڪورس چونڊيو، سڀني ڪورسز جي فيس صرف Rs. 1,000 آهي.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
-            <!-- Feature 1 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-start text-right space-y-4">
-                <div class="text-3xl sm:text-5xl">🏆</div>
-                <h3 class="sindhi-text text-2xl sm:text-3.5xl font-bold text-white">1 مهيني ۾ اعتماد</h3>
-                <p class="sindhi-text text-lg sm:text-xl text-gray-300">صرف هڪ مهيني ۾ رواني ۽ مڪمل اعتماد سان انگلش ڳالهائڻ جي ضمانت۔</p>
-            </div>
-            <!-- Feature 2 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-start text-right space-y-4">
-                <div class="text-3xl sm:text-5xl">✍️</div>
-                <h3 class="sindhi-text text-2xl sm:text-3.5xl font-bold text-white">سنڌي ٻوليءَ ذريعي تدريس</h3>
-                <p class="sindhi-text text-lg sm:text-xl text-gray-300">مڪمل ليڪچر سنڌي ٻوليءَ ۾ ڏنا ويندا آهن ته جيئن سکڻ ۾ بلڪل آساني ٿئي۔</p>
-            </div>
-            <!-- Feature 3 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-start text-right space-y-4">
-                <div class="text-3xl sm:text-5xl">💬</div>
-                <h3 class="sindhi-text text-2xl sm:text-3.5xl font-bold text-white">روزاني ڳالهائڻ جي مشق</h3>
-                <p class="sindhi-text text-lg sm:text-xl text-gray-300">لائيو اسپيڪنگ سيشنز، بحث ۽ گفتگو ذريعي رواني بهتر بنائڻ۔</p>
-            </div>
-            <!-- Feature 4 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-start text-right space-y-4">
-                <div class="text-3xl sm:text-5xl">👨‍🏫</div>
-                <h3 class="sindhi-text text-2xl sm:text-3.5xl font-bold text-white">تجربيڪار استاد</h3>
-                <p class="sindhi-text text-lg sm:text-xl text-gray-300">سر حسن علي جتوئي ۽ سينيئر ماهرن جي سڌي نگرانيءَ ۾ تدريس۔</p>
-            </div>
-            <!-- Feature 5 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-start text-right space-y-4">
-                <div class="text-3xl sm:text-5xl">📱</div>
-                <h3 class="sindhi-text text-2xl sm:text-3.5xl font-bold text-white">موبائل فرينڊلي ڪلاسون</h3>
-                <p class="sindhi-text text-lg sm:text-xl text-gray-300">پنهنجي موبائيل يا ڪمپيوٽر تان گهر ويٺي آسان لائيو ڪلاس حاصل ڪريو۔</p>
-            </div>
-            <!-- Feature 6 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl border border-white/10 flex flex-col items-start text-right space-y-4">
-                <div class="text-3xl sm:text-5xl">👥</div>
-                <h3 class="sindhi-text text-2xl sm:text-3.5xl font-bold text-white">هر عمر لاءِ مناسب</h3>
-                <p class="sindhi-text text-lg sm:text-xl text-gray-300">اسڪول جي ٻارن، نوجوانن ۽ ڪم ڪندڙ پروفيشنلز لاءِ انتهائي ڪارائتو نصاب۔</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- DYNAMIC 50-QUESTIONS PRACTICE ARENA -->
-    <section id="grammar-arena" class="py-16 sm:py-32 max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-right">
-        <div class="text-center mb-12 sm:mb-24 space-y-4">
-            <span class="px-4 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 text-xs sm:text-sm font-bold tracking-widest uppercase sindhi-text">گرامر پريڪٽس گيم زون</span>
-            <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">گرامر جا <span class="neon-glow-flow">50 چيلنجنگ سوال</span></h2>
-            <p class="sindhi-text text-lg sm:text-2xl text-gray-300">هر ڀيري 5 رينڊم سوال ڏنا ويندا۔ صحيح جواب ڏيو ۽ پنهنجي انگريزيءَ کي مضبوط بڻايو!</p>
+        <!-- Course Tabs Buttons (Highly visible text design) -->
+        <div class="flex flex-wrap gap-3 justify-center mb-10">
+            <button onclick="switchTab('spoken')" id="btn-spoken" class="tab-btn px-6 py-3 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 flex items-center gap-2 bg-brand-accent text-brand-dark shadow-md">
+                <i class="fa-solid fa-comments"></i>
+                <span>اسپوڪن انگلش</span>
+            </button>
+            <button onclick="switchTab('grammar')" id="btn-grammar" class="tab-btn px-6 py-3 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 flex items-center gap-2 bg-slate-900 text-brand-textMuted border-2 border-slate-800 hover:text-white hover:border-slate-700">
+                <i class="fa-solid fa-pen-nib"></i>
+                <span>گرامر ۽ رائٽنگ</span>
+            </button>
+            <button onclick="switchTab('ielts')" id="btn-ielts" class="tab-btn px-6 py-3 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 flex items-center gap-2 bg-slate-900 text-brand-textMuted border-2 border-slate-800 hover:text-white hover:border-slate-700">
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>IELTS تياري</span>
+            </button>
+            <button onclick="switchTab('fast')" id="btn-fast" class="tab-btn px-6 py-3 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 flex items-center gap-2 bg-slate-900 text-brand-textMuted border-2 border-slate-800 hover:text-white hover:border-slate-700">
+                <i class="fa-solid fa-bolt"></i>
+                <span>30 ڏينهن فاسٽ پلان</span>
+            </button>
         </div>
 
-        <div class="glass-card p-6 sm:p-12 rounded-3xl border border-white/10 relative overflow-hidden">
-            <!-- Game Welcome Screen -->
-            <div id="game-welcome-screen" class="text-center py-6 sm:py-12 space-y-6">
-                <div class="text-6xl sm:text-9xl animate-bounce">🥇</div>
-                <h3 class="sindhi-text text-3xl sm:text-5xl font-bold text-white">مفت انگلش ٽيسٽ ۽ چيلنج</h3>
-                <p class="sindhi-text text-lg sm:text-2xl text-gray-300 max-w-2xl mx-auto">اسان جي آفيشل ڊيٽابيس مان 5 رينڊم سوالن جا درست جواب ڏئي خاص آڇ ۽ فري سرٽيفڪيٽ لاءِ ڪواليفائي ڪريو!</p>
-                <button onclick="startArenaGame()" class="sindhi-text px-8 sm:px-14 py-4 sm:py-6 rounded-2xl bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-500 hover:to-emerald-500 text-black font-black text-xl sm:text-3xl transition duration-300 shadow-2xl shrink-0 cursor-pointer">راند شروع ڪريو</button>
-            </div>
+        <!-- Tab Content Cards & Live Calculator Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left 2 Columns: Detailed info -->
+            <div class="lg:col-span-2 bg-brand-card border-2 border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
+                <div id="course-details">
+                    <!-- Spoken English Tab (Default Active) -->
+                    <div id="tab-spoken-content" class="tab-content">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-brand-accent/20 text-brand-accent border border-brand-accent/40 px-3 py-1 rounded-lg text-xs md:text-sm font-bold">سڀ کان مشهور</span>
+                            <span class="text-brand-textMuted text-sm font-semibold">مدو: 2 مهينا</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-brand-accent mb-4">🎙️ اسپوڪن انگلش (ڪميونيڪيشن هيرو)</h3>
+                        <p class="text-brand-textMuted text-lg leading-relaxed mb-6">هي ڪورس خاص طور تي انهن شاگردن لاءِ تيار ڪيو ويو آهي جيڪي انگريزي ڳالهائڻ ۾ شرم يا هٻڪ محسوس ڪندا آهن. اسان اوهان جو خوف ختم ڪنداسين.</p>
+                        
+                        <h4 class="font-extrabold text-white mb-3 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-circle-check text-brand-accent"></i>
+                            <span>هن ڪورس جا فائدا:</span>
+                        </h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base md:text-lg text-brand-textMuted mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-brand-accent text-sm"></i> مڪمل اعتماد سان انگلش ڳالهائڻ</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-brand-accent text-sm"></i> 500+ روزاني استعمال وارا جُملا</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-brand-accent text-sm"></i> بهترين تلفظ (Pronunciation)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-brand-accent text-sm"></i> نوڪري جي انٽرويو جي مڪمل تياري</li>
+                        </ul>
+                    </div>
 
-            <!-- Game Playing Screen -->
-            <div id="game-playing-screen" class="hidden space-y-6 sm:space-y-10 text-right">
-                <div class="flex items-center justify-between flex-wrap gap-4">
-                    <span id="arena-progress-txt" class="sindhi-text text-xl sm:text-3xl text-cyan-300 font-bold">سوال 1/5</span>
-                    <span id="arena-score-txt" class="px-4 py-2 rounded-full bg-cyan-500/15 text-cyan-400 text-sm sm:text-xl font-black">اسڪور: 0</span>
-                </div>
-                <div class="h-2.5 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div id="arena-progress-bar" class="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full transition-all duration-300" style="width: 20%;"></div>
+                    <!-- Grammar Tab Content -->
+                    <div id="tab-grammar-content" class="tab-content hidden">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-sky-500/20 text-sky-300 border border-sky-500/40 px-3 py-1 rounded-lg text-xs md:text-sm font-bold">بنيادي کان ايڊوانس</span>
+                            <span class="text-brand-textMuted text-sm font-semibold">مدو: 1.5 مهينا</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-sky-300 mb-4">✍️ انگلش گرامر ۽ رائيٽنگ اسڪيلز</h3>
+                        <p class="text-brand-textMuted text-lg leading-relaxed mb-6">جيڪڏهن اوهان جو گرامر ڪمزور آهي ۽ لکڻ ۾ غلطيون ٿين ٿيون، ته هي ڪورس اوهان کي مڪمل عبور فراهم ڪندو.</p>
+                        
+                        <h4 class="font-extrabold text-white mb-3 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-circle-check text-sky-300"></i>
+                            <span>هن ڪورس جا فائدا:</span>
+                        </h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base md:text-lg text-brand-textMuted mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-sky-300 text-sm"></i> زمان (Tenses) جي مڪمل سمجهہ</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-sky-300 text-sm"></i> Parts of Speech جو صحيح استعمال</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-sky-300 text-sm"></i> مضمون ۽ پروفيشنل خط لکڻ</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-sky-300 text-sm"></i> Active, Passive & Direct Speeches</li>
+                        </ul>
+                    </div>
+
+                    <!-- IELTS Tab Content -->
+                    <div id="tab-ielts-content" class="tab-content hidden">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-3 py-1 rounded-lg text-xs md:text-sm font-bold">پروفيشنل گائيڊ</span>
+                            <span class="text-brand-textMuted text-sm font-semibold">مدو: 3 مهينا</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-emerald-300 mb-4">✈️ IELTS مڪمل گائيڊينس ۽ تياري</h3>
+                        <p class="text-brand-textMuted text-lg leading-relaxed mb-6">ٻاهرين ملڪ وڃڻ يا اسڪالرشپ حاصل ڪرڻ لاءِ آسان طريقي سان IELTS ٽيسٽ ۾ 7.5+ بينڊ حاصل ڪرڻ سکو.</p>
+                        
+                        <h4 class="font-extrabold text-white mb-3 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-circle-check text-emerald-300"></i>
+                            <span>هن ڪورس جا فائدا:</span>
+                        </h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base md:text-lg text-brand-textMuted mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-emerald-300 text-sm"></i> چارئي ماڊولز (Reading, Writing, etc.)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-emerald-300 text-sm"></i> مڪمل فري ماڪ ٽيسٽ پريڪٽس</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-emerald-300 text-sm"></i> هاءِ بينڊ حاصل ڪرڻ جون خاص ٽپس</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-emerald-300 text-sm"></i> IELTS گرامر ۽ هيوي وڪيبولري</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fast Track Content -->
+                    <div id="tab-fast-content" class="tab-content hidden">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1 rounded-lg text-xs md:text-sm font-bold">تيز ترين پروگرام</span>
+                            <span class="text-brand-textMuted text-sm font-semibold">مدو: 30 ڏينهن</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-amber-300 mb-4">⚡ 30 ڏينهن وارو ايڪسپريس انگلش ڪورس</h3>
+                        <p class="text-brand-textMuted text-lg leading-relaxed mb-6">گهٽ ۾ گهٽ وقت ۾ روزاني استعمال ٿيندڙ اهم فقرن، سوال جواب ۽ ڳالهائڻ جي تيز رفتاري جو مڪمل حل.</p>
+                        
+                        <h4 class="font-extrabold text-white mb-3 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-circle-check text-amber-300"></i>
+                            <span>هن ڪورس جا فائدا:</span>
+                        </h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base md:text-lg text-brand-textMuted mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-amber-400 text-sm"></i> تيز ترين انگلش ڪميونيڪيشن</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-amber-400 text-sm"></i> عام غلطين کان بچڻ جا فارمولا</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-amber-400 text-sm"></i> واٽس اپ ذريعي هينڊز آن سپورٽ</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angles-left text-amber-400 text-sm"></i> 30 ڏينهن جو مڪمل ايڪشن پلان</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="space-y-2 sm:space-y-4">
-                    <span class="sindhi-text text-base sm:text-xl font-bold text-amber-400 uppercase tracking-widest block">گرامر ٽيسٽ سوال:</span>
-                    <h4 id="arena-question-text" class="text-xl sm:text-4xl font-bold text-white tracking-wide text-left font-sans">Question text here...</h4>
-                </div>
-
-                <div id="arena-options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-4">
-                    <!-- Dynamic Options Filled by JS -->
-                </div>
-
-                <!-- Instant feedback message block -->
-                <div id="arena-feedback" class="hidden p-4 sm:p-6 rounded-2xl text-center sindhi-text font-black text-xl sm:text-2xl">
-                    <!-- Correct/Incorrect message here -->
-                </div>
-            </div>
-
-            <!-- Game Results Screen -->
-            <div id="game-results-screen" class="hidden text-center py-6 sm:py-12 space-y-6 sm:space-y-10">
-                <div class="text-6xl sm:text-9xl" id="arena-result-emoji">🎉</div>
-                <h3 class="sindhi-text text-3xl sm:text-6xl font-black text-white">شاندار ڪارڪردگي!</h3>
-                <p class="sindhi-text text-xl sm:text-3xl text-gray-200" id="arena-result-desc">توهان جو فائنل اسڪور: 50 مان 50</p>
-
-                <div class="p-5 sm:p-10 bg-cyan-500/5 border border-cyan-500/20 rounded-2xl sm:rounded-3xl max-w-2xl mx-auto space-y-3 sm:space-y-5 text-right">
-                    <h4 class="sindhi-text font-black text-cyan-300 text-xl sm:text-3.5xl">🎁 اسڪول پاران تحفو</h4>
-                    <p class="sindhi-text text-lg sm:text-2xl text-gray-300 leading-relaxed">توهان کي مفت رجسٽريشن، مفت آفيشل سرٽيفڪيٽ ۽ 3 ڏينهن جو مفت ٽرائل ڪلاس مڪمل طور تي الاٽ ڪيو ويو آهي۔ اڄ ئي داخلا وٺي هي گيم ريفرينس شيئر ڪريو!</p>
-                </div>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 w-full">
-                    <button onclick="restartArenaGame()" class="sindhi-text bg-white/5 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-xl transition border border-white/15 text-lg sm:text-2xl cursor-pointer">ٻيهر کيڏو</button>
-                    <a id="arena-whatsapp-link" href="#" target="_blank" class="sindhi-text bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-extrabold px-8 py-4 rounded-xl transition text-lg sm:text-2xl shadow-2xl text-center">انعام واٽس اپ تي حاصل ڪريو</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DYNAMIC DETAILED COURSES CATALOG -->
-    <section id="courses" class="py-16 sm:py-32 px-4 md:px-6 max-w-7xl mx-auto relative z-10 text-right">
-        <div class="text-center mb-12 sm:mb-24 space-y-4">
-            <span class="px-4 py-1.5 rounded-full bg-cyan-500/15 text-cyan-300 text-xs sm:text-sm font-bold uppercase sindhi-text">اسان جا پريميئم ڪورسز</span>
-            <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">توهان جي مستقبل جا <span class="neon-glow-flow">روشن رستا</span></h2>
-            <p class="sindhi-text text-lg sm:text-2xl text-gray-300 max-w-3xl mx-auto">هر شاگرد جي ضرورت مطابق تيار ڪيل نصاب، جنهن سان ٻوليءَ تي مڪمل ڪنٽرول حاصل ٿيندو۔</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
-            <!-- Course Card 1 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl flex flex-col justify-between border border-white/10 group relative overflow-hidden">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl font-bold border border-cyan-500/20 font-sans">01</div>
-                    <h3 class="text-xl sm:text-3xl font-black text-white font-sans">Spoken English Course</h3>
-                    <p class="sindhi-text text-lg sm:text-xl text-gray-300">ڳالهائڻ واري انگريزي۔ بغير هٻڪ ۽ شرم جي گفتگو ۽ پبلڪ اسپيڪنگ جو آسان ترين لائيو طريقو۔</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="sindhi-text text-cyan-300 font-bold text-sm sm:text-lg">فيس: 1000 PKR</span>
-                    <button onclick="openCourseModal('spoken')" class="sindhi-text text-amber-400 hover:text-white transition-all font-bold text-sm sm:text-lg">وڌيڪ تفصيل &larr;</button>
-                </div>
-            </div>
-
-            <!-- Course Card 2 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl flex flex-col justify-between border border-white/10 group relative overflow-hidden">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl font-bold border border-emerald-500/20 font-sans">02</div>
-                    <h3 class="text-xl sm:text-3xl font-black text-white font-sans">Basic English Course</h3>
-                    <p class="sindhi-text text-lg sm:text-xl text-gray-300">بنيادي انگريزي ٻوليءَ جو مڪمل ڪورس۔ هر عمر جي سکندڙن ۽ نون شاگردن لاءِ بهترين شروعات۔</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="sindhi-text text-emerald-300 font-bold text-sm sm:text-lg">فيس: 1000 PKR</span>
-                    <button onclick="openCourseModal('basic')" class="sindhi-text text-amber-400 hover:text-white transition-all font-bold text-sm sm:text-lg">وڌيڪ تفصيل &larr;</button>
-                </div>
-            </div>
-
-            <!-- Course Card 3 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl flex flex-col justify-between border border-white/10 group relative overflow-hidden">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl font-bold border border-purple-500/20 font-sans">03</div>
-                    <h3 class="text-xl sm:text-3xl font-black text-white font-sans">Advanced English Course</h3>
-                    <p class="sindhi-text text-lg sm:text-xl text-gray-300">ايڊوانس ليول انگلش۔ پروفيشنلز، ورڪرن ۽ انٽرويو پاس ڪرڻ لاءِ تيار ڪيل هاءِ پريميئم نصاب۔</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="sindhi-text text-purple-300 font-bold text-sm sm:text-lg">فيس: 1000 PKR</span>
-                    <button onclick="openCourseModal('advanced')" class="sindhi-text text-amber-400 hover:text-white transition-all font-bold text-sm sm:text-lg">وڌيڪ تفصيل &larr;</button>
-                </div>
-            </div>
-
-            <!-- Course Card 4 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl flex flex-col justify-between border border-white/10 group relative overflow-hidden">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 text-xl font-bold border border-amber-500/20 font-sans">04</div>
-                    <h3 class="text-xl sm:text-3xl font-black text-white font-sans">English Grammar</h3>
-                    <p class="sindhi-text text-lg sm:text-xl text-gray-300">مڪمل انگلش گرامر۔ بنيادي ٽينسز کان وٺي جملن جي جوڙجڪ ۽ پارٽس آف اسپيچ تائين پڪو ڪيو۔</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="sindhi-text text-amber-300 font-bold text-sm sm:text-lg">فيس: 1000 PKR</span>
-                    <button onclick="openCourseModal('grammar')" class="sindhi-text text-amber-400 hover:text-white transition-all font-bold text-sm sm:text-lg">وڌيڪ تفصيل &larr;</button>
+                <!-- Course Perks Icons Row (Strong visible icons with lighter text) -->
+                <div class="border-t border-slate-700 pt-6 grid grid-cols-3 gap-2 text-center text-sm md:text-base text-brand-textMuted">
+                    <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-file-pdf text-brand-accent text-xl md:text-2xl mb-1"></i>
+                        <p class="font-bold">فري نوٽس پي ڊي ايف</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-award text-emerald-400 text-xl md:text-2xl mb-1"></i>
+                        <p class="font-bold">سرڪاري سرٽيفڪيٽ</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-headset text-indigo-400 text-xl md:text-2xl mb-1"></i>
+                        <p class="font-bold">روزاني پريڪٽس سپورٽ</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Course Card 5 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl flex flex-col justify-between border border-white/10 group relative overflow-hidden">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 text-xl font-bold border border-pink-500/20 font-sans">05</div>
-                    <h3 class="text-xl sm:text-3xl font-black text-white font-sans">Vocabulary Building</h3>
-                    <p class="sindhi-text text-lg sm:text-xl text-gray-300">روزانو استعمال ٿيندڙ لفظن جو ذخيرو، انهن جا جملا ۽ پيارا پيارا محاورا تيار ڪريو۔</p>
+            <!-- Right 1 Column: Highly legible interactive Fee calculator -->
+            <div class="bg-brand-card border-2 border-slate-800 rounded-3xl p-6 shadow-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 flex items-center gap-2 text-white">
+                        <i class="fa-solid fa-calculator text-brand-accent"></i>
+                        <span>فيس ڪيلڪيوليٽر</span>
+                    </h3>
+                    <p class="text-base text-brand-textMuted mb-6 font-semibold">پنهنجي پسند جو پيڪيج چونڊيو ۽ فليٽ رعايتي فيس جي معلومات حاصل ڪريو.</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-extrabold">ڪورس چونڊيو:</label>
+                            <select id="calc-course" onchange="calculateFee()" class="w-full bg-slate-900 border-2 border-slate-700 rounded-xl px-4 py-3 text-base text-white outline-none focus:border-brand-accent font-bold">
+                                <option value="spoken">اسپوڪن انگلش (2 مهينا) - Rs. 1000</option>
+                                <option value="grammar">گرامر ۽ رائٽنگ (1.5 مهينا) - Rs. 1000</option>
+                                <option value="ielts">IELTS تياري (3 مهينا) - Rs. 1000</option>
+                                <option value="fast">30 ڏينهن فاسٽ پلان - Rs. 1000</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-extrabold">ڪلاس جو قسم:</label>
+                            <select id="calc-type" onchange="calculateFee()" class="w-full bg-slate-900 border-2 border-slate-700 rounded-xl px-4 py-3 text-base text-white outline-none focus:border-brand-accent font-bold">
+                                <option value="group">گروپ ڪلاس (فليٽ فيس)</option>
+                                <option value="one-one">ون ٽو ون پرسنل ڪلاس (پرسنل گائيڊينس)</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="sindhi-text text-pink-300 font-bold text-sm sm:text-lg">فيس: 1000 PKR</span>
-                    <button onclick="openCourseModal('vocabulary')" class="sindhi-text text-amber-400 hover:text-white transition-all font-bold text-sm sm:text-lg">وڌيڪ تفصيل &larr;</button>
-                </div>
-            </div>
 
-            <!-- Course Card 6 -->
-            <div class="glass-card p-6 sm:p-10 rounded-2xl flex flex-col justify-between border border-white/10 group relative overflow-hidden">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 text-xl font-bold border border-teal-500/20 font-sans">06</div>
-                    <h3 class="text-xl sm:text-3xl font-black text-white font-sans">IELTS Preparation</h3>
-                    <p class="sindhi-text text-lg sm:text-xl text-gray-300">آئيليٽس جي تياري۔ ٻاهرين ملڪ اسٽڊي، ويزا ۽ اسڪالرشپ حاصل ڪرڻ لاءِ بهترين ماڊيولز۔</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="sindhi-text text-teal-300 font-bold text-sm sm:text-lg">فيس: 1000 PKR</span>
-                    <button onclick="openCourseModal('ielts')" class="sindhi-text text-amber-400 hover:text-white transition-all font-bold text-sm sm:text-lg">وڌيڪ تفصيل &larr;</button>
+                <div class="mt-8 pt-6 border-t border-slate-700">
+                    <div class="flex items-center justify-between mb-2 text-lg">
+                        <span class="text-brand-textMuted font-bold">اصلي فيس:</span>
+                        <span id="price-original" class="line-through text-red-400 font-bold font-english">Rs. 1,500</span>
+                    </div>
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xl text-brand-textMuted font-black">رعايتي فيس:</span>
+                        <span id="price-final" class="text-3xl font-black text-emerald-400 font-english bg-slate-900 px-4 py-1.5 rounded-xl border-2 border-emerald-500/30">Rs. 1,000</span>
+                    </div>
+                    <button onclick="enrollFromCalculator()" class="w-full bg-brand-accent hover:bg-brand-hover text-brand-dark font-black py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-lg shadow-md">
+                        <span>هن ڪورس سان اڳتي وڌو</span>
+                        <i class="fa-solid fa-arrow-left text-sm"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MAJESTIC FEE SPECIAL PROMOTIONAL BOARD -->
-    <section class="py-16 sm:py-32 max-w-6xl mx-auto px-4 md:px-6 relative z-10 text-right">
-        <div class="bg-gradient-to-br from-cyan-950 via-slate-950 to-slate-900 rounded-3xl p-6 sm:p-14 border-2 border-cyan-400/30 text-white flex flex-col md:flex-row items-center justify-between gap-10 shadow-3xl">
-            <div class="space-y-4 sm:space-y-6 max-w-2xl">
-                <span class="sindhi-text px-4 py-2 rounded-full bg-cyan-400/20 text-cyan-300 text-sm font-black inline-block">🎁 لميٽيڊ ٽائيم خاص آڇ</span>
-                <h3 class="sindhi-text text-4xl sm:text-6xl font-black text-white leading-none">مڪمل بنڊل صرف <span class="neon-glow-cyan font-black">1000 PKR</span> ۾!</h3>
-                <p class="sindhi-text text-lg sm:text-2xl text-gray-300 leading-relaxed">
-                    اسان تعليم کي هر غريب ۽ وچولي درجي جي سنڌي شاگرد تائين پهچائڻ لاءِ مڪمل پيڪيج انتهائي سستو ڪيو آهي۔
+    <!-- WHY CHOOSE US CARDS (GRID) -->
+    <section class="py-16 bg-slate-900/40 border-y-2 border-slate-800 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-white">✨ اسان کي ڇو چونڊيو؟</h2>
+                <p class="text-brand-textMuted text-lg md:text-xl max-w-xl mx-auto">آڪسفورڊ انگلش اڪيڊمي سنڌي شاگردن لاءِ پڙهائڻ جو سڀ کان آسان ترين سسٽم رکي ٿي.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-brand-card border-2 border-slate-800 p-6 rounded-2xl hover:border-brand-accent/30 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-accent/20 flex items-center justify-center text-brand-accent text-2xl mb-4">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">مادري ٻولي (سنڌي) ۾ سمجھاڻي</h3>
+                    <p class="text-brand-textMuted text-base leading-relaxed">گرامر ۽ روزاني جملن جا اصول اوهان کي سنڌي زبان ۾ تفصيل سان سمجھايا ويندا، ته جيئن بنياد انتهائي مضبوط ٿئي.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-brand-card border-2 border-slate-800 p-6 rounded-2xl hover:border-brand-accent/30 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">روزاني پريڪٽيڪل پريڪٽس</h3>
+                    <p class="text-brand-textMuted text-base leading-relaxed">روزانه زوم ۽ واٽس اپ گروپ ذريعي هڪ ٻئي سان لائيو ڳالهائڻ جو موقعو ته جيئن اوهان جو انگلش ڳالهائڻ جو ڊپ دور ٿئي.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-brand-card border-2 border-slate-800 p-6 rounded-2xl hover:border-brand-accent/30 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl mb-4">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">تصديق ٿيل سرٽيفڪيٽ</h3>
+                    <p class="text-brand-textMuted text-base leading-relaxed">ڪورس مڪمل ٿيڻ تي تصديق ٿيل ڊجيٽل سرٽيفڪيٽ ڏنو ويندو، جنهن سان اوهان پنهنجي پروفيشنل سي وي کي مضبوط ڪري سگهو ٿا.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISSION FORM SECTION -->
+    <section id="admission-section" class="py-16 px-4 max-w-3xl mx-auto">
+        <div class="bg-brand-card border-2 border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+            <!-- Decorative high contrast accent bar -->
+            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-brand-accent via-sky-400 to-brand-accent"></div>
+
+            <div class="text-center mb-8 pt-4">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-white flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-file-signature text-brand-accent"></i>
+                    <span>آن لائن داخلا فارم</span>
+                </h2>
+                <p class="text-brand-textMuted text-base font-semibold">پنهنجي معلومات درست داخل ڪريو ته جيئن اسان جو نمائندو اوهان سان جلدي رابطو ڪري سگهي.</p>
+            </div>
+
+            <!-- Form inputs with light grey background and light high contrast text -->
+            <div class="space-y-6">
+                <!-- Group 1: Personal Details -->
+                <div class="bg-slate-900/60 p-5 rounded-2xl border-2 border-slate-800 space-y-4">
+                    <h3 class="text-base font-extrabold text-brand-accent flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-user text-sm"></i>
+                        <span>شخصي معلومات (Personal Details)</span>
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-bold">پنهنجو پورو نالو: <span class="text-red-400">*</span></label>
+                            <div class="relative">
+                                <span class="absolute right-3 top-3.5 text-brand-textMuted"><i class="fa-regular fa-user"></i></span>
+                                <input id="name" type="text" placeholder="مثال: علي احمد" class="w-full bg-brand-dark border-2 border-slate-700 rounded-xl pr-10 pl-4 py-3 text-base text-white placeholder-slate-400 outline-none focus:border-brand-accent transition-all duration-300 font-bold">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-bold">پيءُ جو نالو:</label>
+                            <div class="relative">
+                                <span class="absolute right-3 top-3.5 text-brand-textMuted"><i class="fa-regular fa-user-circle"></i></span>
+                                <input id="father" type="text" placeholder="مثال: محمد خان" class="w-full bg-brand-dark border-2 border-slate-700 rounded-xl pr-10 pl-4 py-3 text-base text-white placeholder-slate-400 outline-none focus:border-brand-accent transition-all duration-300 font-bold">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-bold">واٽس اپ نمبر: <span class="text-red-400">*</span></label>
+                            <div class="relative">
+                                <span class="absolute right-3 top-3.5 text-emerald-400"><i class="fa-brands fa-whatsapp font-bold"></i></span>
+                                <input id="phone" type="tel" placeholder="مثال: 03001234567" class="w-full bg-brand-dark border-2 border-slate-700 rounded-xl pr-10 pl-4 py-3 text-base text-white placeholder-slate-400 outline-none focus:border-brand-accent transition-all duration-300 font-english text-right font-bold">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-bold">تعليمي قابليت:</label>
+                            <select id="edu" class="w-full bg-brand-dark border-2 border-slate-700 rounded-xl px-3 py-3 text-base text-white outline-none focus:border-brand-accent transition-all duration-300 font-bold">
+                                <option value="">پنهنجي تعليم چونڊيو</option>
+                                <option value="Primary">پرائمري / مڊل</option>
+                                <option value="Matric">ميٽرڪ (Matric)</option>
+                                <option value="Intermediate">انٽر (Intermediate)</option>
+                                <option value="Graduate">گريجوئيشن (Graduate)</option>
+                                <option value="Master">ماسٽرز (Masters)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: Address & School/College -->
+                <div class="bg-slate-900/60 p-5 rounded-2xl border-2 border-slate-800 space-y-4">
+                    <h3 class="text-sm font-bold text-sky-400 flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-map-marker-alt text-xs"></i>
+                        <span>ائڊريس ۽ تعليمي ادارو (Location & Academy)</span>
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-bold">ڳوٺ / شهر:</label>
+                            <div class="relative">
+                                <span class="absolute right-3 top-3.5 text-brand-textMuted"><i class="fa-solid fa-city"></i></span>
+                                <input id="city" type="text" placeholder="مثال: لاڙڪاڻو / حيدرآباد" class="w-full bg-brand-dark border-2 border-slate-700 rounded-xl pr-10 pl-4 py-3 text-base text-white placeholder-slate-400 outline-none focus:border-brand-accent transition-all duration-300 font-bold">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-brand-textMuted mb-1 font-bold">اسڪول / ڪاليج / يونيورسٽي:</label>
+                            <div class="relative">
+                                <span class="absolute right-3 top-3.5 text-brand-textMuted"><i class="fa-solid fa-school"></i></span>
+                                <input id="school" type="text" placeholder="توهان جي اداري جو نالو" class="w-full bg-brand-dark border-2 border-slate-700 rounded-xl pr-10 pl-4 py-3 text-base text-white placeholder-slate-400 outline-none focus:border-brand-accent transition-all duration-300 font-bold">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Course selection (All set to flat 1000) -->
+                <div class="bg-slate-900/60 p-5 rounded-2xl border-2 border-slate-800 space-y-4">
+                    <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-book-open text-xs"></i>
+                        <span>ڪورس جو انتخاب (Select Course - flat Rs. 1000)</span>
+                    </h3>
+                    
+                    <div>
+                        <label class="block text-sm text-brand-textMuted mb-1 font-bold">توهان ڪهڙو ڪورس ڪرڻ چاهيو ٿا؟ <span class="text-red-400">*</span></label>
+                        <select id="course" class="w-full bg-brand-dark border-2 border-slate-700 rounded-xl px-3 py-3 text-base text-white outline-none focus:border-brand-accent transition-all duration-300 font-bold">
+                            <option value="">پنهنجو ڪورس چونڊيو</option>
+                            <option value="Spoken English">اسپوڪن انگلش (Rs. 1,000)</option>
+                            <option value="Grammar">انگلش گرامر ۽ رائيٽنگ (Rs. 1,000)</option>
+                            <option value="IELTS">IELTS مڪمل تياري (Rs. 1,000)</option>
+                            <option value="30 Days Program">30 ڏينهن فاسٽ پروگرام (Rs. 1,000)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submission Action Button (Large, clickable, bold text) -->
+                <button onclick="submitAdmission()" class="glow-effect w-full bg-brand-accent hover:bg-brand-hover text-brand-dark font-black text-xl py-4.5 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>داخلا فارم جمع ڪريو (WhatsApp تي موڪليو)</span>
+                </button>
+                
+                <p class="text-center text-sm text-brand-textMuted font-bold mt-2">
+                    <i class="fa-solid fa-shield-halved text-emerald-400 ml-1"></i> مهرباني ڪري فارم جمع ڪرڻ کانپوءِ واٽس اپ تي "Send" بٽڻ ضرور دٻايو.
                 </p>
-                <div class="grid grid-cols-2 gap-4 pt-4 text-sm sm:text-lg font-bold">
-                    <div class="flex items-center gap-2 justify-end"><span class="sindhi-text">📜 سرٽيفڪيٽ مفت</span> <span class="text-cyan-400">✔</span></div>
-                    <div class="flex items-center gap-2 justify-end"><span class="sindhi-text">📝 رجسٽريشن مفت</span> <span class="text-cyan-400">✔</span></div>
-                    <div class="flex items-center gap-2 justify-end"><span class="sindhi-text">🎓 باقي ڪورسز بلڪل مفت</span> <span class="text-cyan-400">✔</span></div>
-                    <div class="flex items-center gap-2 justify-end"><span class="sindhi-text">📱 گهر ويٺي آسان سکيا</span> <span class="text-cyan-400">✔</span></div>
-                </div>
-            </div>
-
-            <div class="text-center p-6 sm:p-10 bg-black/40 border border-white/10 rounded-2xl w-full md:w-80 shrink-0 space-y-4 sm:space-y-6">
-                <span class="sindhi-text text-gray-400 font-bold block">مڪمل ڪورس آفر فيس:</span>
-                <div class="text-5xl sm:text-7xl font-black text-cyan-400 neon-glow-cyan tracking-wider flex items-baseline justify-center">
-                    1,000 <span class="text-base sm:text-2xl text-white font-bold mr-2">PKR</span>
-                </div>
-                <p class="sindhi-text text-xs text-gray-400">ڪو به لڪيل چارجز ناهي۔ مڪمل پيڪيج لائف ٽائيم سپورٽ سان گڏ۔</p>
-                <a href="#admission-form" class="sindhi-text block w-full py-3.5 sm:py-5 rounded-xl bg-cyan-400 hover:bg-cyan-500 text-black font-black text-lg sm:text-2xl transition shadow-xl shadow-cyan-500/10">هاڻي اپلائي ڪريو</a>
             </div>
         </div>
     </section>
 
-    <!-- MAGNIFICENT FACULTY / INSTRUCTOR CORNER -->
-    <section id="faculty" class="py-16 sm:py-32 max-w-4xl mx-auto px-4 md:px-6 relative z-10 text-right">
-        <div class="text-center mb-12 sm:mb-24 space-y-4">
-            <span class="px-4 py-1.5 rounded-full bg-amber-500/15 text-amber-300 text-xs sm:text-sm font-bold uppercase sindhi-text">سينيئر ليڊر شپ</span>
-            <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">پرنسپال ۽ <span class="neon-glow-flow">مکيه استاد</span></h2>
-        </div>
-
-        <div class="glass-card rounded-3xl p-6 sm:p-14 text-center border-2 border-cyan-400/50 relative overflow-hidden space-y-6 sm:space-y-10 shadow-3xl">
-            <div class="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-cyan-400/25 text-cyan-300 border border-cyan-400/40 text-[10px] uppercase font-black tracking-widest font-sans animate-pulse">
-                PRINCIPAL & FOUNDER
-            </div>
-            
-            <div class="w-24 h-24 sm:w-36 sm:h-36 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center text-4xl sm:text-6xl mx-auto border-4 border-cyan-400/40 neon-glow-cyan">👑</div>
-            
-            <div class="space-y-2">
-                <h4 class="text-3xl sm:text-5xl font-black text-white tracking-wider sindhi-text">سر حسن علي جتوئي</h4>
-                <p class="text-xs sm:text-lg text-cyan-300 font-extrabold tracking-widest uppercase font-sans">Principal & Instructor, Oxford English Academy</p>
-                <span class="sindhi-text text-lg sm:text-2xl text-emerald-400 font-black block mt-2">The First Online Sindhi English School Coach</span>
-            </div>
-
-            <p class="sindhi-text text-lg sm:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto">
-                "منهنجو مقصد هر سنڌي شاگرد کي بنا ڪنهن خوف يا شرم جي عالمي معيار جي انگريزي انتهائي آسان، نئين ۽ سادي ٻوليءَ ۾ سيکارڻ آهي۔ توهان جو پهريون قدم توهان کي ڪاميابيءَ جي اوج تي وٺي ويندو۔"
-            </p>
-
-            <div class="pt-4 flex justify-center gap-3 flex-wrap text-sm sm:text-base">
-                <span class="px-3.5 py-1.5 rounded-xl bg-white/5 text-gray-300 font-semibold border border-white/10">10+ Years Experience</span>
-                <span class="px-3.5 py-1.5 rounded-xl bg-cyan-400/15 text-cyan-300 font-semibold border border-cyan-400/20">Highly Friendly Mentoring</span>
-                <span class="px-3.5 py-1.5 rounded-xl bg-white/5 text-gray-300 font-semibold border border-white/10">Sindhi Audio Pioneer</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- DYNAMIC 20 REVIEWS BOARD -->
-    <section id="reviews-board" class="py-16 sm:py-32 bg-slate-950/40 relative z-10 text-right">
-        <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <div class="text-center mb-12 sm:mb-24 space-y-4">
-                <span class="px-4 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 text-xs sm:text-sm font-bold uppercase sindhi-text">شاگردن جي زباني</span>
-                <h2 class="sindhi-text text-4xl sm:text-7xl font-black text-white">شاگردن جا <span class="neon-glow-flow">20 شاندار تبصرا</span></h2>
-                <p class="sindhi-text text-lg sm:text-2xl text-gray-300">اسان جي شاگردن جي ڪاميابي ۽ سندن مٺا تبصرا اسان جو فخر آهن۔</p>
+    <!-- INTERACTIVE AI HELPER CHAT (CHATBOT) -->
+    <section class="py-16 px-4 max-w-4xl mx-auto border-t-2 border-slate-800">
+        <div class="bg-gradient-to-br from-brand-card to-slate-900 border-2 border-slate-800 rounded-3xl p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b-2 border-slate-800 pb-4 mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent text-xl relative">
+                        <i class="fa-solid fa-robot"></i>
+                        <span class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full bg-emerald-400 border-2 border-brand-dark animate-pulse"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg">آڪسفورڊ اڪيڊمي AI مددگار</h3>
+                        <p class="text-sm text-emerald-400 font-bold">توهان جي ٻولي سنڌي ۽ انگلش ۾ چيٽ ڪريو</p>
+                    </div>
+                </div>
+                <button onclick="clearChat()" class="text-sm text-red-400 hover:text-red-300 font-extrabold flex items-center gap-1 bg-slate-800 border border-red-500/30 px-3 py-2 rounded-lg">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>چيٽ صاف ڪريو</span>
+                </button>
             </div>
 
-            <!-- Carousel Grid for 20 Student Reviews -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10" id="reviews-grid-container">
-                <!-- Javascript will load these dynamic cards or render a neat pagination -->
+            <!-- Chat screen box with readable contrast bubbles -->
+            <div id="chat-box" class="h-72 overflow-y-auto mb-4 space-y-4 p-2 text-base flex flex-col">
+                <!-- Welcome Message -->
+                <div class="bg-slate-800 text-brand-textLight rounded-2xl rounded-tr-none px-4 py-3.5 max-w-[85%] self-start border-2 border-slate-700 leading-relaxed font-bold">
+                    ڀلي ڪري آيا! 🌹 مان آڪسفورڊ اڪيڊمي جو آن لائن نمائندو آهيان. توهان ڪنهن به ڪورس جي باري ۾، فيس بابت (جيڪا هاڻي سڀني ڪورسز جي صرف Rs. 1,000 آهي!)، يا پڙهائڻ جي طريقن بابت پڇي سگهو ٿا. مان سنڌي ۽ انگريزي ۾ جواب ڏئي سگهان ٿو.
+                </div>
             </div>
 
-            <div class="mt-12 text-center">
-                <button id="load-more-reviews-btn" onclick="toggleAllReviews()" class="sindhi-text bg-cyan-400 hover:bg-cyan-500 text-black font-extrabold px-8 py-4 rounded-xl text-lg sm:text-2xl transition cursor-pointer shadow-lg shadow-cyan-500/20">
-                    باقي سمورا تبصرا ڏسو (20 Reviews)
+            <!-- Input bar -->
+            <div class="flex gap-2">
+                <input id="user-msg" type="text" placeholder="مثال: ڪورس فيس ۽ ٽائمنگ ڇا آهي؟" class="flex-1 bg-brand-dark border-2 border-slate-700 rounded-xl px-4 py-3.5 text-base text-white placeholder-slate-400 outline-none focus:border-brand-accent transition-all duration-300 font-bold" onkeydown="if(event.key === 'Enter') sendAIChat()">
+                <button onclick="sendAIChat()" class="bg-brand-accent hover:bg-brand-hover text-brand-dark px-6 rounded-xl font-black transition-all duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane-rtl text-base"></i>
+                    <span class="hidden sm:inline">موڪليو</span>
                 </button>
             </div>
         </div>
     </section>
-<!-- HIGH-CONTRAST SINDHI / EDUCATION REGISTRATION FORM -->
-<section id="admission-form" class="py-16 sm:py-32 px-4 md:px-6 relative overflow-hidden z-10 text-right">
 
-    <div class="absolute -bottom-24 -left-24 w-48 sm:w-96 h-48 sm:h-96 bg-cyan-600/10 rounded-full blur-[150px] pointer-events-none"></div>
-
-    <div class="max-w-4xl mx-auto glass-card p-6 sm:p-14 rounded-3xl relative z-10 border border-white/10 shadow-3xl space-y-6 sm:space-y-10">
-
-        <!-- HEADER -->
-        <div class="text-center space-y-3">
-            <span class="sindhi-text px-4 py-2 rounded-full bg-cyan-500/15 text-cyan-300 text-sm font-bold uppercase tracking-widest">
-                ايجوڪيشن رجسٽريشن فارم
-            </span>
-
-            <h2 class="sindhi-text text-3xl sm:text-5xl font-black text-white">
-                هاڻي ئي <span class="neon-glow-flow">داخلہ فارم ڀريو</span>
-            </h2>
-
-            <p class="sindhi-text text-lg sm:text-2xl text-gray-300">
-                پنهنجا مڪمل تفصيل لکو، اسان جي ٽيم جلد واٽس اپ تي رابطو ڪندي۔
-            </p>
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark border-t-2 border-slate-800 py-12 px-4 text-center text-sm text-brand-textMuted relative z-10">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 mb-8 text-right">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-accent/20 p-2.5 rounded-lg border border-brand-accent/30">
+                    <i class="fa-solid fa-graduation-cap text-brand-accent text-2xl"></i>
+                </div>
+                <div>
+                    <span class="font-english font-black text-white text-lg block">OXFORD ENGLISH ACADEMY</span>
+                    <span class="text-sm font-semibold">تعليم سڀني لاءِ، روشن مستقبل جو سفر.</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm font-bold">
+                <a href="#courses-section" class="hover:text-brand-accent transition-colors">اسان جا ڪورسز</a>
+                <a href="#admission-section" class="hover:text-brand-accent transition-colors">آن لائن داخلا</a>
+                <a href="https://wa.me/923083500829" target="_blank" class="hover:text-emerald-400 transition-colors">سڌو رابطو</a>
+            </div>
         </div>
 
-        <!-- FORM -->
-        <form class="space-y-6 sm:space-y-8" onsubmit="submitSindhiRegistration(event)">
+        <div class="border-t border-slate-800 pt-6">
+            <p class="text-xs">&copy; 2026 آڪسفورڊ انگلش اڪيڊمي. سڀ حق محفوظ آهن.</p>
+        </div>
+    </footer>
 
-            <!-- NAME -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">نالو (Student Name):</label>
-                <input type="text" id="reg-name" required
-                    placeholder="پنهنجو پورو نالو لکو"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-right text-lg sm:text-xl font-bold sindhi-text">
-            </div>
-
-            <!-- FATHER NAME -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">پيءُ جو نالو (Father Name):</label>
-                <input type="text" id="reg-father" required
-                    placeholder="پيءُ جو نالو لکو"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-right text-lg sm:text-xl font-bold sindhi-text">
-            </div>
-
-            <!-- AGE -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">عمر (Age):</label>
-                <input type="number" id="reg-age" required
-                    placeholder="مثال: 18"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-right text-lg sm:text-xl font-bold">
-            </div>
-
-            <!-- GENDER -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">جنس (Gender):</label>
-                <select id="reg-gender"
-                    class="w-full p-4 rounded-2xl premium-input text-white bg-slate-950 text-lg sm:text-xl font-bold">
-                    <option value="male">مرد (Male)</option>
-                    <option value="female">عورت (Female)</option>
-                    <option value="other">ٻيو (Other)</option>
-                </select>
-            </div>
-
-            <!-- WHATSAPP -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">واٽس اپ نمبر:</label>
-                <input type="tel" id="reg-phone" required
-                    placeholder="03000000000"
-                    style="direction:ltr;"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-left text-lg sm:text-xl font-bold">
-            </div>
-
-            <!-- EMAIL -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">اي ميل (Email):</label>
-                <input type="email" id="reg-email"
-                    placeholder="example@gmail.com"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-lg sm:text-xl font-bold">
-            </div>
-
-            <!-- EDUCATION -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">تعليم (Education):</label>
-                <input type="text" id="reg-education"
-                    placeholder="مثال: Matric / Intermediate / Graduate"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-lg sm:text-xl font-bold">
-            </div>
-
-            <!-- ADDRESS -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">پتو (Address):</label>
-                <input type="text" id="reg-address"
-                    placeholder="ڳوٺ / محلو / شهر"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-right text-lg sm:text-xl font-bold sindhi-text">
-            </div>
-
-            <!-- VILLAGE / TEHSIL -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-                <input type="text" id="reg-village" required
-                    placeholder="ڳوٺ (Village)"
-                    class="p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-right text-lg sm:text-xl font-bold sindhi-text">
-
-                <input type="text" id="reg-tehsil" required
-                    placeholder="تحصيل (Tehsil)"
-                    class="p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-right text-lg sm:text-xl font-bold sindhi-text">
-
-            </div>
-
-            <!-- DISTRICT -->
-            <div class="space-y-2">
-                <input type="text" id="reg-district" required
-                    placeholder="ضلع (District)"
-                    class="w-full p-4 rounded-2xl premium-input text-white placeholder-gray-600 text-right text-lg sm:text-xl font-bold sindhi-text">
-            </div>
-
-            <!-- COURSE -->
-            <div class="space-y-2">
-                <label class="sindhi-text text-lg sm:text-2xl text-gray-300 font-semibold">ڪورس چونڊيو:</label>
-                <select id="reg-course"
-                    class="w-full p-4 rounded-2xl premium-input text-white bg-slate-950 text-lg sm:text-xl font-bold">
-
-                    <option value="spoken">Spoken English</option>
-                    <option value="basic">Basic English</option>
-                    <option value="advanced">Advanced English</option>
-                    <option value="grammar">English Grammar</option>
-                    <option value="vocab">Vocabulary</option>
-                    <option value="ielts">IELTS Preparation</option>
-
-                </select>
-            </div>
-
-            <!-- SUBMIT BUTTON -->
-            <button type="submit"
-                class="w-full bg-gradient-to-r from-cyan-400 via-purple-500 to-emerald-400 hover:from-cyan-500 hover:to-purple-600 p-4 sm:p-6 rounded-2xl font-black text-xl sm:text-3xl text-black flex justify-center items-center gap-3 cursor-pointer">
-
-                <span>فارم جمع ڪرايو 🚀</span>
-
-                <svg class="hidden animate-spin h-6 w-6" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                </svg>
-
-            </button>
-
-        </form>
+    <!-- TOAST NOTIFICATION SYSTEM (No alert() used) -->
+    <div id="custom-toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-brand-accent text-brand-dark px-6 py-3 rounded-full font-bold text-base shadow-2xl hidden flex items-center gap-2 border-2 border-brand-dark transition-all duration-300">
+        <span id="toast-icon"><i class="fa-solid fa-circle-check"></i></span>
+        <span id="toast-text">پيغام ڪاميابي سان موڪليو ويو!</span>
     </div>
-</section>
 
-        // HARDCODED ARRAY OF 50 UNIQUE GRAMMAR QUESTIONS PROVIDED BY THE USER
-        const grammarQuestionsDatabase = [
-            { q: "He ___ to school every day.", options: ["go", "goes", "going", "gone"], answer: 1 },
-            { q: "They ___ playing cricket now.", options: ["is", "am", "are", "was"], answer: 2 },
-            { q: "She ___ a letter yesterday.", options: ["write", "wrote", "written", "writing"], answer: 1 },
-            { q: "I have ___ my homework.", options: ["finish", "finishing", "finished", "had finished"], answer: 2 },
-            { q: "Choose the correct article: ___ apple.", options: ["A", "An", "The", "No article"], answer: 1 },
-            { q: "Ali is ___ honest boy.", options: ["a", "an", "the", "some"], answer: 1 },
-            { q: "We ___ in Karachi.", options: ["live", "living", "live", "lived"], answer: 2 },
-            { q: "The sun ___ in the east.", options: ["rise", "rises", "rising", "rose"], answer: 1 },
-            { q: "She ___ tea every morning.", options: ["drink", "drinks", "drinking", "drank"], answer: 1 },
-            { q: "I ___ never seen this movie.", options: ["has", "have", "had", "am"], answer: 1 },
-            { q: "They ___ football when it started raining.", options: ["were playing", "was playing", "are playing", "play"], answer: 0 },
-            { q: "He ___ English for two years.", options: ["studied", "studies", "has studied", "is studying"], answer: 2 },
-            { q: "Correct the sentence: \"She go to school.\"", options: ["She goes to school.", "She is go to school.", "She going to school.", "She gone to school."], answer: 0 },
-            { q: "What is the plural of \"Child\"?", options: ["Childs", "Children", "Childrens", "Childes"], answer: 1 },
-            { q: "What is the opposite of \"Brave\"?", options: ["Fearless", "Heroic", "Cowardly", "Strong"], answer: 2 },
-            { q: "What is the synonym of \"Happy\"?", options: ["Sad", "Angry", "Joyful", "Tired"], answer: 2 },
-            { q: "What is the past tense of \"Eat\"?", options: ["Eaten", "Ate", "Eats", "Eating"], answer: 1 },
-            { q: "What is the past participle of \"Write\"?", options: ["Wrote", "Writing", "Written", "Writes"], answer: 2 },
-            { q: "Which word is a noun?", options: ["Run", "Beautiful", "Book", "Quickly"], answer: 2 },
-            { q: "Which word is an adjective?", options: ["Sing", "Beautiful", "Happiness", "Slowly"], answer: 1 },
-            { q: "Which word is a verb?", options: ["Run", "Fast", "Apple", "They"], answer: 0 },
-            { q: "Which word is a pronoun?", options: ["Ali", "He", "Teacher", "School"], answer: 1 },
-            { q: "What is the comparative of \"Good\"?", options: ["Gooder", "Better", "Best", "More good"], answer: 1 },
-            { q: "What is the superlative of \"Good\"?", options: ["Goodest", "Better", "Best", "Most good"], answer: 2 },
-            { q: "Fill in the blank: I am taller ___ Ahmed.", options: ["then", "than", "from", "to"], answer: 1 },
-            { q: "She is the ___ girl in the class.", options: ["smart", "smarter", "smartest", "most smart"], answer: 2 },
-            { q: "The book ___ belongs to me.", options: ["who", "whose", "that", "whom"], answer: 2 },
-            { q: "If I were rich, I ___ help the poor.", options: ["will", "would", "shall", "can"], answer: 1 },
-            { q: "We ___ dinner before they arrived.", options: ["have eaten", "had eaten", "were eating", "ate"], answer: 1 },
-            { q: "He said that he ___ busy.", options: ["is", "was", "will be", "has been"], answer: 1 },
-            { q: "Which sentence is correct?", options: ["She doesn't like tea.", "She don't like tea.", "She not like tea.", "She doesn't likes tea."], answer: 0 },
-            { q: "What is a preposition?", options: ["A word modifying a verb.", "A word showing position or relation.", "A word replacing a noun.", "An action word."], answer: 1 },
-            { q: "Complete: The cat is ___ the table.", options: ["on", "under", "between", "through"], answer: 1 },
-            { q: "What is an adverb?", options: ["A word that modifies a verb, adjective, or adverb.", "An action word.", "A naming word.", "A word showing position."], answer: 0 },
-            { q: "He speaks English ___.", options: ["fluent", "fluently", "more fluent", "fluency"], answer: 1 },
-            { q: "The train ___ before we reached the station.", options: ["left", "has left", "had left", "was leaving"], answer: 2 },
-            { q: "What is the future tense of \"Go\"?", options: ["Went", "Going", "Will go", "Gone"], answer: 2 },
-            { q: "We ___ our work by tomorrow.", options: ["finish", "will finish", "finished", "have finished"], answer: 1 },
-            { q: "Change into passive voice: 'Ali wrote a letter.'", options: ["A letter was written by Ali.", "A letter is written by Ali.", "A letter written by Ali.", "Ali wrote a letter."], answer: 0 },
-            { q: "Change into active voice: 'The work was completed by Ahmed.'", options: ["Ahmed completes the work.", "Ahmed completed the work.", "Ahmed was completing the work.", "The work completed Ahmed."], answer: 1 },
-            { q: "What is the antonym of \"Ancient\"?", options: ["Old", "Modern", "Historic", "Young"], answer: 1 },
-            { q: "What is the synonym of \"Quick\"?", options: ["Slow", "Fast", "Lazy", "Smart"], answer: 1 },
-            { q: "Neither Ali nor Ahmed ___ present.", options: ["are", "is", "were", "have been"], answer: 1 },
-            { q: "Everyone ___ invited.", options: ["were", "was", "are", "have"], answer: 1 },
-            { q: "He is interested ___ science.", options: ["on", "in", "at", "with"], answer: 1 },
-            { q: "She insisted ___ going.", options: ["on", "to", "for", "with"], answer: 0 },
-            { q: "The teacher made us ___ hard.", options: ["work", "working", "to work", "worked"], answer: 0 },
-            { q: "I wish I ___ younger.", options: ["was", "were", "am", "been"], answer: 1 },
-            { q: "Hardly had he arrived ___ it started raining.", options: ["then", "than", "when", "that"], answer: 2 },
-            { q: "No sooner had she left ___ the phone rang.", options: ["then", "than", "when", "that"], answer: 1 }
-        ];
+    <!-- REGISTERED SUCCESS DIALOG MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-brand-card border-2 border-slate-700 rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 left-4 text-brand-textMuted hover:text-white transition-colors text-xl">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center text-emerald-400 text-3xl mx-auto mb-4">
+                    <i class="fa-solid fa-circle-check animate-bounce"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">داخلا فارم تيار آهي!</h3>
+                <p class="text-brand-textMuted text-base font-bold">توهان جو داخلا فارم مڪمل ٿي ويو آهي. هاڻي هيٺ ڏنل بٽڻ تي ڪلڪ ڪري واٽس اپ تي موڪليو ته جيئن توهان جو نمبر الٽ ڪريون.</p>
+            </div>
 
-        // HARDCODED ARRAY OF 20 STUDENT REVIEWS PROVIDED BY THE USER (adapted to Sindhi + English format)
-        const studentReviewsDatabase = [
-            { id: 1, textSindhi: "سر حسن علي جتوئي تمام آسان طريقي سان انگريزي سيکاري ٿو۔", textEng: "Sir Hassan Ali Jatoi teaches English in a very easy way.", initial: "ح ج" },
-            { id: 2, textSindhi: "هاڻي مان هڪ مهيني کان پوءِ اعتماد سان انگريزي ڳالهائي سگهان ٿو۔", textEng: "I can now speak English confidently after one month.", initial: "ع س" },
-            { id: 3, textSindhi: "گرامر جا سبق تمام بهترين ۽ عملي آهن۔", textEng: "The grammar lessons are excellent and practical.", initial: "ج ا" },
-            { id: 4, textSindhi: "هن اڪيڊمي منهنجي ڳالهائڻ جي صلاحيتن کي بدلائي ڇڏيو۔", textEng: "This academy changed my communication skills.", initial: "ص س" },
-            { id: 5, textSindhi: "مان روزانو پنهنجي لفظن جي ذخيري (vocabulary) کي بهتر ڪيو۔", textEng: "I improved my vocabulary every day.", initial: "و ب" },
-            { id: 6, textSindhi: "سنڌي شاگردن لاءِ ڪلاسون سمجهڻ تمام آسان آهن۔", textEng: "The classes are easy to understand for Sindhi students.", initial: "س ش" },
-            { id: 7, textSindhi: "استاد تمام دوستانه ۽ مددگار آهي۔", textEng: "The teacher is friendly and supportive.", initial: "د ا" },
-            { id: 8, textSindhi: "مون بغير ڪنهن ڊپ يا خوف جي انگلش ڳالهائڻ سکيو۔", textEng: "I learned spoken English without fear.", initial: "ب ڊ" },
-            { id: 9, textSindhi: "آن لائن ڪلاسون انتهائي مددگار ثابت ٿيون۔", textEng: "The online classes are very helpful.", initial: "آ ڪ" },
-            { id: 10, textSindhi: "ٽيسٽن منهنجي گرامر جي معلومات کي بهتر بڻايو۔", textEng: "The tests improved my grammar knowledge.", initial: "ٽ گ" },
-            { id: 11, textSindhi: "هن اڪيڊمي جي ڪري مان پنهنجو انگلش انٽرويو پاس ڪيو۔", textEng: "I passed my English interview because of this academy.", initial: "ا پ" },
-            { id: 12, textSindhi: "ڪورس جي بناوٽ تمام جديد ۽ اثرائتي آهي۔", textEng: "The course structure is modern and effective.", initial: "ڪ ب" },
-            { id: 13, textSindhi: "هر سبق بلڪل واضح، چٽو ۽ دلچسپ آهي۔", textEng: "Every lesson is clear and interesting.", initial: "س چ" },
-            { id: 14, textSindhi: "مان سڀني شاگردن کي هن اڪيڊمي ۾ داخلا جي صلاح ڏيندس۔", textEng: "I recommend this academy to all students.", initial: "س ص" },
-            { id: 15, textSindhi: "منهنجي انگلش لکڻ جي صلاحيتن ۾ تمام گهڻو سڌارو آيو آهي۔", textEng: "My English writing skills improved greatly.", initial: "ل ص" },
-            { id: 16, textSindhi: "رجسٽريشن جو طريقو تمام سادو ۽ تيز هو۔", textEng: "The registration process was simple and quick.", initial: "ر ط" },
-            { id: 17, textSindhi: "مون عوام آڏو ڳالهائڻ (public speaking) ۾ اعتماد حاصل ڪيو۔", textEng: "I gained confidence in public speaking.", initial: "ع ڳ" },
-            { id: 18, textSindhi: "اڪيڊمي تمام گهٽ فيس تي معياري تعليم فراهم ڪري ٿي۔", textEng: "The academy provides quality education at a very low fee.", initial: "م ت" },
-            { id: 19, textSindhi: "مفت سرٽيفڪيٽ منهنجي پڙهائي ۽ ڪيريئر ۾ مدد ڪئي۔", textEng: "The certificate helped me in my studies and career.", initial: "م س" },
-            { id: 20, textSindhi: "سر حسن علي جتوئي، توهان جي محنت ۽ رهنمائي لاءِ وڏي مهرباني۔", textEng: "Thank you, Sir Hassan Ali Jatoi, for your dedication and guidance.", initial: "ح ج" }
-        ];
+            <!-- Receipt Detail Box (High Contrast layout) -->
+            <div class="bg-slate-900 border-2 border-slate-700 p-4 rounded-2xl mb-6 text-sm text-right space-y-2">
+                <div><span class="text-brand-textMuted font-bold">شاگرد جو نالو:</span> <span id="rec-name" class="font-extrabold text-white">-</span></div>
+                <div><span class="text-brand-textMuted font-bold">واٽس اپ نمبر:</span> <span id="rec-phone" class="font-extrabold text-white font-english">-</span></div>
+                <div><span class="text-brand-textMuted font-bold">چونڊيل ڪورس:</span> <span id="rec-course" class="font-extrabold text-brand-accent">-</span></div>
+                <div><span class="text-brand-textMuted font-bold">ڪورس فيس:</span> <span class="font-extrabold text-emerald-400 font-english">Rs. 1,000 (فليٽ رعايت)</span></div>
+            </div>
 
-        window.onload = function() {
-            renderStudentReviews(6); // Load first 6 reviews to maintain extreme performance
-            initDynamicArenaQuestions();
+            <div class="space-y-2">
+                <button onclick="sendToWhatsappFinal()" class="w-full bg-brand-accent hover:bg-brand-hover text-brand-dark font-black py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-lg shadow-md">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>هاڻي واٽس اپ ڪريو</span>
+                </button>
+                <button onclick="closeModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-brand-textMuted font-bold py-3 rounded-xl transition-all duration-300 text-sm">
+                    بند ڪريو
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHATSAPP FLOATING BUTTON WITH GLOW EFFECT -->
+    <a class="whatsapp-btn fixed bottom-6 right-6 w-16 h-16 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl hover:scale-110 transition-all duration-300 z-40 glow-effect" href="https://wa.me/923083500829?text=السلام%20عليڪم%20آڪسفورڊ%20اڪيڊمي" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Store computed registration data temporarily
+        let registrationData = null;
+
+        // Optimized Course details and flat 1000 RS pricing arrays
+        const coursePricing = {
+            spoken: { original: 1500, final: 1000, title: "اسپوڪن انگلش (Basic to Fluent)" },
+            grammar: { original: 1500, final: 1000, title: "انگلش گرامر ۽ رائيٽنگ" },
+            ielts: { original: 2000, final: 1000, title: "IELTS Preparation" },
+            fast: { original: 1500, final: 1000, title: "30 Days Express Program" }
         };
 
-        let showingAllReviewsState = false;
-        function renderStudentReviews(limit) {
-            const container = document.getElementById('reviews-grid-container');
-            container.innerHTML = '';
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             
-            const targetList = showingAllReviewsState ? studentReviewsDatabase : studentReviewsDatabase.slice(0, limit);
-            
-            targetList.forEach(rev => {
-                const card = document.createElement('div');
-                card.className = "glass-card p-6 sm:p-10 rounded-2xl relative border border-white/10 flex flex-col justify-between space-y-4";
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-center gap-1 text-amber-400 text-lg sm:text-2xl mb-4">★★★★★</div>
-                        <p class="sindhi-text text-white text-lg sm:text-2xl italic leading-relaxed mb-4">"${rev.textSindhi}"</p>
-                        <p class="text-gray-400 text-sm sm:text-lg italic font-sans leading-relaxed">"${rev.textEng}"</p>
-                    </div>
-                    <div class="flex items-center gap-4 border-t border-white/10 pt-4 justify-end">
-                        <div class="text-right">
-                            <div class="font-bold text-white text-sm sm:text-xl tracking-wider sindhi-text">ڪامياب شاگرد</div>
-                            <div class="sindhi-text text-[11px] sm:text-base text-gray-400">آڪسفورڊ اسڪول گريجوئيٽ</div>
-                        </div>
-                        <div class="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-black text-sm sm:text-xl shrink-0 font-sans">${rev.initial}</div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+            // Show selected tab content
+            document.getElementById(`tab-${tabId}-content`).classList.remove('hidden');
 
-        function toggleAllReviews() {
-            const btn = document.getElementById('load-more-reviews-btn');
-            if(showingAllReviewsState) {
-                showingAllReviewsState = false;
-                renderStudentReviews(6);
-                btn.innerText = "باقي سمورا تبصرا ڏسو (20 Reviews)";
-            } else {
-                showingAllReviewsState = true;
-                renderStudentReviews(20);
-                btn.innerText = "تبصرا گهٽ ڪريو";
+            // Deactivate all tab buttons with high-contrast unselected state
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-6 py-3 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 flex items-center gap-2 bg-slate-900 text-brand-textMuted border-2 border-slate-800 hover:text-white hover:border-slate-700";
+            });
+
+            // Activate chosen tab button
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "tab-btn active-tab px-6 py-3 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 flex items-center gap-2 bg-brand-accent text-brand-dark shadow-md";
+            }
+
+            // Sync fee calculator selection automatically
+            const calcSelect = document.getElementById('calc-course');
+            if (calcSelect) {
+                calcSelect.value = tabId;
+                calculateFee();
             }
         }
 
-        let arenaSessionQuestions = [];
-        let arenaCurrentIdx = 0;
-        let arenaScore = 0;
+        // Real-time fee calculation with visual markup
+        function calculateFee() {
+            const courseSelect = document.getElementById('calc-course').value;
+            const typeSelect = document.getElementById('calc-type').value;
 
-        function initDynamicArenaQuestions() {
-            // Pick 5 completely random questions from the database of 50
-            const shuffled = [...grammarQuestionsDatabase].sort(() => 0.5 - Math.random());
-            arenaSessionQuestions = shuffled.slice(0, 5);
-        }
+            let priceData = coursePricing[courseSelect] || { original: 1500, final: 1000 };
+            
+            let finalPrice = priceData.final; // Flattered to 1000 RS
+            let originalPrice = priceData.original;
 
-        function startArenaGame() {
-            document.getElementById('game-welcome-screen').classList.add('hidden');
-            document.getElementById('game-playing-screen').classList.remove('hidden');
-            arenaCurrentIdx = 0;
-            arenaScore = 0;
-            loadArenaQuestion();
-        }
-
-        function loadArenaQuestion() {
-            const currentQObj = arenaSessionQuestions[arenaCurrentIdx];
-            document.getElementById('arena-progress-txt').innerText = `سوال ${arenaCurrentIdx + 1}/5`;
-            document.getElementById('arena-score-txt').innerText = `اسڪور: ${arenaScore * 10}`;
-
-            const progressPercentage = ((arenaCurrentIdx + 1) / 5) * 100;
-            document.getElementById('arena-progress-bar').style.width = `${progressPercentage}%`;
-
-            document.getElementById('arena-question-text').innerText = currentQObj.q;
-
-            const optContainer = document.getElementById('arena-options-container');
-            optContainer.innerHTML = '';
-
-            currentQObj.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = "w-full text-right p-4 rounded-xl premium-input text-gray-200 hover:text-white hover:bg-white/5 border border-white/10 transition flex justify-between items-center text-sm sm:text-2xl cursor-pointer";
-                btn.innerHTML = `
-                    <span class="w-5 h-5 rounded-full border border-white/30 flex items-center justify-center text-xs text-transparent shrink-0">○</span>
-                    <span>${opt}</span>
-                `;
-                btn.onclick = () => selectArenaAnswer(idx);
-                optContainer.appendChild(btn);
-            });
-        }
-
-        function selectArenaAnswer(idx) {
-            const currentQObj = arenaSessionQuestions[arenaCurrentIdx];
-            const feedback = document.getElementById('arena-feedback');
-            feedback.classList.remove('hidden');
-
-            const isCorrect = idx === currentQObj.answer;
-            if(isCorrect) {
-                arenaScore++;
-                feedback.className = "p-4 sm:p-6 rounded-2xl text-center sindhi-text font-black text-xl sm:text-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/25";
-                feedback.innerText = "درست جواب! آفرين 🎉";
-            } else {
-                feedback.className = "p-4 sm:p-6 rounded-2xl text-center sindhi-text font-black text-xl sm:text-2xl bg-red-500/10 text-red-400 border border-red-500/25";
-                feedback.innerText = `غلط جواب! درست جواب هي آهي: ${currentQObj.options[currentQObj.answer]}`;
+            // Optional markup for personal VIP one-on-one attention
+            if (typeSelect === 'one-one') {
+                finalPrice = finalPrice + 500; // Minimal helper charge for 1-on-1
+                originalPrice = originalPrice + 1000;
             }
 
-            document.querySelectorAll('#arena-options-container button').forEach(btn => btn.disabled = true);
+            document.getElementById('price-original').innerText = `Rs. ${originalPrice.toLocaleString()}`;
+            document.getElementById('price-final').innerText = `Rs. ${finalPrice.toLocaleString()}`;
+        }
 
+        // Quick enrollment helper
+        function enrollFromCalculator() {
+            const courseVal = document.getElementById('calc-course').value;
+            const courseSelectField = document.getElementById('course');
+            
+            // Map select options to target admission inputs
+            const map = {
+                spoken: "Spoken English",
+                grammar: "Grammar",
+                ielts: "IELTS",
+                fast: "30 Days Program"
+            };
+
+            courseSelectField.value = map[courseVal] || "";
+            
+            // Scroll to form cleanly
+            document.getElementById('admission-section').scrollIntoView({ behavior: 'smooth' });
+            showToast("ڪورس فارم ۾ سيلڪٽ ٿي ويو آهي! مهرباني ڪري مڪمل معلومات لکو.");
+        }
+
+        // Custom toast helper
+        function showToast(text, isError = false) {
+            const toast = document.getElementById('custom-toast');
+            const toastText = document.getElementById('toast-text');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastText.innerText = text;
+            if (isError) {
+                toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-red-500 text-white px-6 py-3.5 rounded-full font-bold text-base shadow-2xl flex items-center gap-2 border-2 border-red-600 transition-all duration-300";
+                toastIcon.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>`;
+            } else {
+                toast.className = "fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-brand-accent text-brand-dark px-6 py-3.5 rounded-full font-bold text-base shadow-2xl flex items-center gap-2 border-2 border-brand-dark transition-all duration-300";
+                toastIcon.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+            }
+
+            toast.classList.remove('hidden');
             setTimeout(() => {
-                feedback.classList.add('hidden');
-                if(arenaCurrentIdx < 4) {
-                    arenaCurrentIdx++;
-                    loadArenaQuestion();
-                } else {
-                    showArenaResults();
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Admission Form validation and Modal receipt generator
+        function submitAdmission() {
+            const name = document.getElementById('name').value.trim();
+            const father = document.getElementById('father').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const edu = document.getElementById('edu').value;
+            const city = document.getElementById('city').value.trim();
+            const school = document.getElementById('school').value.trim();
+            const course = document.getElementById('course').value;
+
+            // Form validations
+            if (!name) {
+                showToast("مهرباني ڪري پنهنجو نالو لکو!", true);
+                document.getElementById('name').focus();
+                return;
+            }
+            if (!phone) {
+                showToast("مهرباني ڪري پنهنجو واٽس اپ نمبر لکو!", true);
+                document.getElementById('phone').focus();
+                return;
+            }
+            if (!course) {
+                showToast("مهرباني ڪري ڪورس چونڊيو!", true);
+                document.getElementById('course').focus();
+                return;
+            }
+
+            registrationData = {
+                name, father, phone, edu, city, school, course
+            };
+
+            // Inject information into confirmation modal
+            document.getElementById('rec-name').innerText = name;
+            document.getElementById('rec-phone').innerText = phone;
+            document.getElementById('rec-course').innerText = course;
+
+            // Trigger modal display safely
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function sendToWhatsappFinal() {
+            if (!registrationData) return;
+
+            // Beautiful, formatted high contrast text layout for WhatsApp
+            const textMsg = `📚 آڪسفورڊ انگلش اڪيڊمي - آن لائن داخلا فارم 📚\n\n` +
+                            `👤 شاگرد جو نالو: ${registrationData.name}\n` +
+                            `👨‍💼 پيءُ جو نالو: ${registrationData.father || 'داخل نه ٿيل'}\n` +
+                            `📞 واٽس اپ نمبر: ${registrationData.phone}\n` +
+                            `🎓 تعليمي قابليت: ${registrationData.edu || 'داخل نه ٿيل'}\n` +
+                            `🏫 ادارو/ڪاليج: ${registrationData.school || 'داخل نه ٿيل'}\n` +
+                            `📍 ڳوٺ/شهر: ${registrationData.city || 'داخل نه ٿيل'}\n\n` +
+                            `📘 چونڊيل ڪورس: ${registrationData.course}\n` +
+                            `💰 ڪورس فيس: Rs. 1,000 (فليٽ آڇ)\n\n` +
+                            `✨ منهنجي داخلا رجسٽر ڪريو، مهرباني!`;
+
+            const whatsappUrl = `https://wa.me/923083500829?text=${encodeURIComponent(textMsg)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            closeModal();
+            showToast("واٽس اپ تي موڪليو پيو وڃي!");
+
+            // Clean forms
+            document.getElementById('name').value = "";
+            document.getElementById('father').value = "";
+            document.getElementById('phone').value = "";
+            document.getElementById('edu').value = "";
+            document.getElementById('city').value = "";
+            document.getElementById('school').value = "";
+            document.getElementById('course').value = "";
+        }
+
+        // Local Chatbot setup utilizing high contrast bubbles
+        const chatBox = document.getElementById('chat-box');
+        
+        function appendChatMessage(sender, text) {
+            const bubble = document.createElement('div');
+            
+            if (sender === 'user') {
+                bubble.className = "bg-brand-accent text-brand-dark rounded-2xl rounded-tl-none px-4.5 py-3.5 max-w-[85%] self-end font-extrabold text-right shadow-md";
+            } else {
+                bubble.className = "bg-slate-800 text-brand-textLight rounded-2xl rounded-tr-none px-4.5 py-3.5 max-w-[85%] self-start text-right border-2 border-slate-700 leading-relaxed font-bold shadow-md";
+            }
+            
+            bubble.innerText = text;
+            chatBox.appendChild(bubble);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function clearChat() {
+            chatBox.innerHTML = `
+                <div class="bg-slate-800 text-brand-textLight rounded-2xl rounded-tr-none px-4.5 py-3.5 max-w-[85%] self-start text-right border-2 border-slate-700 leading-relaxed font-bold shadow-md">
+                    ڀلي ڪري آيا! 🌹 مان آڪسفورڊ اڪيڊمي جو آن لائن نمائندو آهيان. توهان ڪنهن به ڪورس جي باري ۾، فيس بابت (جيڪا هاڻي سڀني ڪورسز جي صرف Rs. 1,000 آهي!)، يا پڙهائڻ جي طريقن بابت پڇي سگهو ٿا. مان سنڌي ۽ انگريزي ۾ جواب ڏئي سگهان ٿو.
+                </div>
+            `;
+            showToast("چيٽ هسٽري صاف ڪئي وئي.");
+        }
+
+        // Call Gemini 3 Flash model to serve as high-converting customer counselor
+        async function sendAIChat() {
+            const userMsgInput = document.getElementById('user-msg');
+            const messageText = userMsgInput.value.trim();
+            if (!messageText) return;
+
+            appendChatMessage('user', messageText);
+            userMsgInput.value = "";
+
+            // Display loading indicator
+            const loader = document.createElement('div');
+            loader.className = "bg-slate-800/80 text-brand-accent rounded-xl px-4 py-2 text-sm self-start italic flex items-center gap-2 animate-pulse border border-slate-700";
+            loader.innerHTML = `<i class="fa-solid fa-spinner animate-spin text-sm"></i> <span class="font-bold">جواب تيار ٿي رهيو آهي...</span>`;
+            chatBox.appendChild(loader);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                // Strict Prompt to inform Gemini of the flat Rs 1000 pricing limit
+                const systemPrompt = "You are a friendly virtual counselor at Oxford English Academy. This academy targets Sindhi students. Address user inquiries primarily in Sindhi (with Nastaliq style Arabic script) or simple English. EVERY course costs FLAT Rs 1,000 right now (Spoken English, Grammar, IELTS, 30 Days Express). Be encouraging, extremely readable, positive, and clear. Direct them politely to fill the online registration form on this web page. The WhatsApp contact number is 0308-3500829.";
+
+                const apiKey = ""; // Fallback runtime token inside client environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: messageText }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Gemini server error");
                 }
-            }, 1800);
-        }
 
-        function showArenaResults() {
-            document.getElementById('game-playing-screen').classList.add('hidden');
-            const resultScreen = document.getElementById('game-results-screen');
-            resultScreen.classList.remove('hidden');
+                const result = await response.json();
+                const aiResponse = result.candidates?.[0]?.content?.parts?.[0]?.text;
 
-            document.getElementById('arena-result-desc').innerHTML = `توهان 5 مان <span class="text-cyan-400 font-extrabold text-2xl sm:text-4xl">${arenaScore}</span> سوالن جا صحيح جواب ڏنا آهن۔`;
-            
-            const emoji = document.getElementById('arena-result-emoji');
-            if(arenaScore === 5) {
-                emoji.innerText = "🥇";
-            } else if(arenaScore >= 3) {
-                emoji.innerText = "🥈";
-            } else {
-                emoji.innerText = "🥉";
+                // Remove loading prompt safely
+                chatBox.removeChild(loader);
+
+                if (aiResponse) {
+                    appendChatMessage('ai', aiResponse);
+                } else {
+                    appendChatMessage('ai', "معاف ڪجو، مان سمجهي نه سگهيس. مهرباني ڪري ٻيهر پڇو يا سڌو اسان جي نمبر 0308-3500829 تي واٽس اپ ڪريو.");
+                }
+
+            } catch (error) {
+                console.error("Gemini chatbot error: ", error);
+                if (chatBox.contains(loader)) {
+                    chatBox.removeChild(loader);
+                }
+                // High contrast fallback text message
+                appendChatMessage('ai', "آڪسفورڊ اڪيڊمي ۾ اوهان کي ڀليڪار! خاص رعايتي آڇ جي تحت هر ڪورس جي فيس صرف Rs. 1,000 آهي. مهرباني ڪري فارم ڀري واٽس اپ بٽڻ تي ڪلڪ ڪريو ته جيئن اوهان جي سيٽ رجسٽر ٿئي.");
             }
-
-            // Set up dynamic WhatsApp link containing their score
-            const whatsappText = encodeURIComponent(`السلام عليڪم! مون آڪسفورڊ گرامر گيم ۾ 5 مان ${arenaScore} اسڪور ڪيو آهي۔ مهرباني ڪري مونکي مفت رجسٽريشن، فري سرٽيفڪيٽ ۽ ڊيمو ڪلاس جي لنڪ موڪليو۔`);
-            document.getElementById('arena-whatsapp-link').href = `https://wa.me/923083500829?text=${whatsappText}`;
         }
 
-        function restartArenaGame() {
-            document.getElementById('game-results-screen').classList.add('hidden');
-            document.getElementById('game-welcome-screen').classList.remove('hidden');
-            initDynamicArenaQuestions();
-        }
-
-        const coursesInfoMeta = {
-            spoken: {
-                title: 'Spoken English Course',
-                desc: 'ڳالهائڻ واري انگريزيءَ تي مڪمل عبور',
-                points: [
-                    'بنا ڪنهن شرم يا خوف جي روزاني رواني سان ڳالهائڻ',
-                    'اکرن جا درست اچار ۽ بهترين لهجي (Pronunciation & Accent) جو مشقون',
-                    'لائيو گفتگو (Daily Conversation) ۽ گروپ سيشنز',
-                    'پبلڪ اسپيڪنگ جا خاص راز ۽ ڪانفيڊنس بلڊنگ'
-                ],
-                price: 'فيس صرف 1000 رپيا (سرٽيفڪيٽ ۽ رجسٽريشن مفت)'
-            },
-            basic: {
-                title: 'Basic English Course',
-                desc: 'بنيادي انگلش کي شروع کان سکو',
-                points: [
-                    'اکرن ۽ بنيادي لفظن کان مڪمل شروعات',
-                    'عام جملن جي جوڙجڪ ۽ روزمره جا ننڍا جملا',
-                    'آسان گرامر گائيڊ سنڌي ٻوليءَ جي تفصيلي مدد سان',
-                    'هر عمر جي اسٽوڊنٽس ۽ ٻارن لاءِ انتهائي آسان طريقو'
-                ],
-                price: 'فيس صرف 1000 رپيا (سرٽيفڪيٽ ۽ رجسٽريشن مفت)'
-            },
-            advanced: {
-                title: 'Advanced English Course',
-                desc: 'پروفيشنل ۽ نوڪريءَ جي انگلش تياري',
-                points: [
-                    'ايڊوانس انگلش لفظ (Advanced Vocabulary) ۽ فريزز',
-                    'نوڪريءَ جي انٽرويوز جي تياري (Interview Preparation)',
-                    'آفس ۽ ڪوليج جي سطح تي پروفيشنل گفتگو',
-                    'سر حسن علي جتوئيءَ سان اسپيشل ون-ٽو-ون رهنمائي'
-                ],
-                price: 'فيس صرف 1000 رپيا (سرٽيفڪيٽ ۽ رجسٽريشن مفت)'
-            },
-            grammar: {
-                title: 'English Grammar Masterclass',
-                desc: 'گرامر جا سمورا اصول پڪا ڪريو',
-                points: [
-                    'سمورا ٽينسز (All Tenses) ۽ انهن جو لائيوف استعمال',
-                    'Active/Passive ۽ Direct/Indirect جا سادا طريقا',
-                    'لکڻين ۽ جملن ۾ ٿيندڙ عام غلطين جي اصلاح',
-                    'اسڪول ۽ ڪاليج ليول جي گرامر جي مڪمل سپورٽ'
-                ],
-                price: 'فيس صرف 1000 رپيا (سرٽيفڪيٽ ۽ رجسٽريشن مفت)'
-            },
-            vocabulary: {
-                title: 'Vocabulary & Conversation Building',
-                desc: 'لفظن جو زبردست ۽ روشن ذخيرو',
-                points: [
-                    'روزانو نوان 50 لفظ ۽ انهن جو جملن ۾ روزمره جو استعمال',
-                    'مخصوص گفتگو جا فڪرا (Sindhi to English Dialogues)',
-                    'پرڪشش محاورا (Idioms) ۽ انهن جو درست اچار',
-                    'پنهنجي لفظن کي بغير رٽي ياد رکڻ جون ٽيڪنالاجيون'
-                ],
-                price: 'فيس صرف 1000 رپيا (سرٽيفڪيٽ ۽ رجسٽريشن مفت)'
-            },
-            ielts: {
-                title: 'IELTS Preparation Guide',
-                desc: 'ٻاهرين ملڪ وڃڻ جا خواب پورا ڪيو',
-                points: [
-                    'IELTS Listening, Reading, Writing & Speaking تياري',
-                    'گھربل بينڊز حاصل ڪرڻ لاءِ سادا ٽپس ۽ موڪ ٽيسٽ',
-                    'ماهر استادن پاران مقالن ۽ اسپيڪنگ جي چيڪنگ',
-                    'انٽرويو کي منهن ڏيڻ جا بهترين پروفيشنل طريقا'
-                ],
-                price: 'فيس صرف 1000 رپيا (سرٽيفڪيٽ ۽ رجسٽريشن مفت)'
-            }
+        // Start initialization
+        window.onload = function() {
+            calculateFee();
         };
-
-        function openCourseModal(key) {
-            const data = coursesInfoMeta[key];
-            if(!data) return;
-
-            const modal = document.getElementById('course-details-modal');
-            const container = document.getElementById('course-modal-container');
-            const inner = document.getElementById('course-modal-inner');
-
-            let bulletPoints = '';
-            data.points.forEach(pt => {
-                bulletPoints += `
-                    <li class="flex items-center gap-3 text-gray-200 text-lg sm:text-2xl py-2 justify-end">
-                        <span>${pt}</span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shrink-0"></span>
-                    </li>
-                `;
-            });
-
-            inner.innerHTML = `
-                <div class="mb-4 text-right">
-                    <span class="px-3.5 py-1 text-xs font-bold rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/30 uppercase tracking-widest font-sans">SPECIAL COURSE DETAILS</span>
-                </div>
-                <h3 class="sindhi-text text-2xl sm:text-5xl font-black text-white mb-2">${data.title}</h3>
-                <p class="sindhi-text text-lg sm:text-2xl text-gray-300 mb-6 font-medium">${data.desc}</p>
-
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 mb-6 text-right">
-                    <span class="sindhi-text block text-xs text-amber-400 font-bold uppercase mb-1">خاص آڇ فيس</span>
-                    <span class="sindhi-text text-lg sm:text-3xl font-extrabold text-cyan-400">${data.price}</span>
-                </div>
-
-                <div class="mb-8">
-                    <h4 class="sindhi-text font-bold text-white mb-4 text-xl sm:text-3xl">ڪورس ۾ ڇا سيکاريو ويندو:</h4>
-                    <ul class="space-y-2">
-                        ${bulletPoints}
-                    </ul>
-                </div>
-
-                <div class="flex gap-4 w-full">
-                    <button onclick="closeCourseModal()" class="sindhi-text w-1/2 bg-white/5 hover:bg-white/10 text-white font-bold p-3 sm:p-5 rounded-xl text-center transition border border-white/15 text-sm sm:text-2xl cursor-pointer">
-                        بند ڪريو
-                    </button>
-                    <a href="#admission-form" onclick="selectCourseAndScroll('${key}')" class="sindhi-text w-1/2 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-500 hover:to-emerald-500 text-black text-center font-black p-3 sm:p-5 rounded-xl transition text-sm sm:text-2xl flex justify-center items-center shadow-2xl">
-                        داخلا فارم وٺو
-                    </a>
-                </div>
-            `;
-
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                container.classList.remove('scale-95');
-                container.classList.add('scale-100');
-            }, 50);
-        }
-
-        function closeCourseModal() {
-            const modal = document.getElementById('course-details-modal');
-            const container = document.getElementById('course-modal-container');
-            container.classList.remove('scale-100');
-            container.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 200);
-        }
-
-        function selectCourseAndScroll(key) {
-            closeCourseModal();
-            const dropdown = document.getElementById('reg-course');
-            
-            const mapper = {
-                spoken: 'spoken_eng',
-                basic: 'basic_eng',
-                advanced: 'adv_eng',
-                grammar: 'grammar',
-                vocabulary: 'vocab',
-                ielts: 'ielts'
-            };
-
-            const targetVal = mapper[key];
-            if(targetVal) {
-                dropdown.value = targetVal;
-            }
-        }
-
-        let zaraOpen = false;
-        function toggleZaraChatWindow() {
-            const windowEl = document.getElementById('zara-chat-window');
-            if(zaraOpen) {
-                windowEl.classList.add('hidden', 'scale-95');
-                zaraOpen = false;
-            } else {
-                windowEl.classList.remove('hidden');
-                setTimeout(() => {
-                    windowEl.classList.remove('scale-95');
-                }, 50);
-                zaraOpen = true;
-            }
-        }
-
-        const zaraBotReplies = {
-            spoken_details: "اسان جو اسپوڪن انگلش (Spoken English) ڪورس روزانه لائيو گفتگو ۽ پريڪٽس سان ڀريل آهي۔ صرف هڪ مهيني اندر اوهان بغير ڪنهن ڊپ يا هٻڪ جي انگلش ڳالهائي سگهندا۔ هينئر ئي داخلا ڀري پنهنجو سيٽ پڪو ڪيو!",
-            fee_offer: "آڪسفورڊ اسڪول سنڌ جي ٻارن ۽ نوجوانن لاءِ فيس مڪمل طور تي انتهائي گهٽ رکي آهي:\n- ڪورس فيس صرف: **1000 PKR**\n- رجسٽريشن مڪمل طور تي: **مفت**\n- آفيشل سرٽيفڪيٽ پڻ: **بلڪل مفت**\n\nباقي سمورا سپورٽ ڪورس پڻ بلڪل مفت ڏنا ويندا!",
-            hassan_ali: "سينيئر ليڊ انگلش لينگوسٽڪس ڪوچ **سر حسن علي جتوئي** آڪسفورڊ انگلش اڪيڊميءَ جا مکيه استاد ۽ پرنسپال آهن۔ سندن نگرانيءَ ۾ پوري سنڌ جي 5000 کان مٿي شاگردن ڪاميابيءَ سان رواني حاصل ڪئي آهي۔",
-            free_certs: "جي ها! ڪورس مڪمل ٿيڻ تي اوهان کي آڪسفورڊ انگلش اسڪول پاران رجسٽرڊ سرٽيفڪيٽ مڪمل طور تي **مفت (Free of Cost)** ڏنو ويندو۔ جيڪو اوهان جي سي وي ۽ مستقبل ۾ نوڪريءَ لاءِ انتهائي مفيد آهي۔"
-        };
-
-        function sendZaraQuickMessage(key) {
-            const msgArea = document.getElementById('zara-messages');
-            
-            const labels = {
-                spoken_details: "انگريزي ڪيئن سکجي؟",
-                fee_offer: "فيس ۽ آڇون؟",
-                hassan_ali: "سر حسن علي جتوئي؟",
-                free_certs: "فري سرٽيفڪيٽس؟"
-            };
-
-            const userBubble = document.createElement('div');
-            userBubble.className = "flex items-start justify-end gap-3";
-            userBubble.innerHTML = `
-                <div class="sindhi-text bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-xl p-3 sm:p-5 text-sm sm:text-2xl text-black font-extrabold max-w-[85%] leading-relaxed text-right shadow-md">
-                    ${labels[key]}
-                </div>
-            `;
-            msgArea.appendChild(userBubble);
-            msgArea.scrollTop = msgArea.scrollHeight;
-
-            const loaderBubble = document.createElement('div');
-            loaderBubble.id = 'zara-typing-loader';
-            loaderBubble.className = "flex items-start gap-3";
-            loaderBubble.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center font-bold text-xs shrink-0">Z</div>
-                <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-1.5 shadow-md">
-                    <span class="typing-dot"></span>
-                    <span class="typing-dot"></span>
-                    <span class="typing-dot"></span>
-                </div>
-            `;
-            msgArea.appendChild(loaderBubble);
-            msgArea.scrollTop = msgArea.scrollHeight;
-
-            setTimeout(() => {
-                const loader = document.getElementById('zara-typing-loader');
-                if(loader) loader.remove();
-
-                const botBubble = document.createElement('div');
-                botBubble.className = "flex items-start gap-3";
-                botBubble.innerHTML = `
-                    <div class="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center font-bold text-xs shrink-0">Z</div>
-                    <div class="sindhi-text bg-white/5 border border-white/10 rounded-xl p-3 sm:p-5 text-sm sm:text-xl text-gray-200 max-w-[85%] leading-relaxed whitespace-pre-line shadow-md text-right">
-                        ${zaraBotReplies[key]}
-                    </div>
-                `;
-                msgArea.appendChild(botBubble);
-                msgArea.scrollTop = msgArea.scrollHeight;
-            }, 1000);
-        }
-
-        function submitSindhiRegistration(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('reg-name').value;
-            const phone = document.getElementById('reg-phone').value;
-            const courseValue = document.getElementById('reg-course').value;
-
-            const btnText = document.getElementById('reg-btn-text');
-            const spinner = document.getElementById('reg-loading-spinner');
-
-            btnText.innerText = "درخواست پروسيس ٿي رهي آهي...";
-            spinner.classList.remove('hidden');
-
-            setTimeout(() => {
-                // Clear out inputs smoothly
-                document.getElementById('reg-name').value = '';
-                document.getElementById('reg-phone').value = '';
-
-                btnText.innerText = "درخواست جمع ڪرايو 🚀";
-                spinner.classList.add('hidden');
-
-                showRegistrationSuccessToast();
-            }, 1400);
-        }
-
-        function showRegistrationSuccessToast() {
-            const toast = document.getElementById('reg-success-toast');
-            toast.classList.remove('hidden', 'translate-y-20');
-            toast.classList.add('translate-y-0');
-
-            setTimeout(() => {
-                toast.classList.add('translate-y-20');
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                }, 300);
-            }, 8000);
-        }
     </script>
 </body>
 </html>
